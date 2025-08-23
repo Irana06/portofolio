@@ -1,8 +1,28 @@
+import { Volume2, VolumeOff } from 'lucide-react'
 import './App.css'
 import avatarHead from './assets/avatarHead.png'
 import caveBackground from './assets/cavewallpaper.png'
+import { useRef, useState } from 'react'
 
 function App() {
+  const music = import.meta.glob('./assets/music/*.mp3', { eager: true })
+  const musicFiles = Object.values(music).map((mod) => (mod as { default: string }).default)
+
+  const randomIndex = Math.floor(Math.random() * musicFiles.length)
+  const audioRef = useRef(new Audio(musicFiles[randomIndex]))
+
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const toggleMusic = () => {
+    const audio = audioRef.current
+    if (isPlaying) {
+      audio.pause()
+    } else {
+      audio.play()
+      audio.loop = true
+    }
+    setIsPlaying(!isPlaying)
+  }
 
   return (
     <>
@@ -29,6 +49,10 @@ function App() {
               <a className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
                 href="#">Contact</a>
             </div>
+
+            <span onClick={toggleMusic} className="cursor-pointer text-black " aria-label="Toggle Music" role="button">
+              {isPlaying ? <Volume2 className="w-6 h-6" /> : <VolumeOff className="w-6 h-6" />}
+            </span>
             {/* <div className="flex items-center justify-end gap-3">
               <a className="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
                 href="/login">Sign in</a>
