@@ -8,3 +8,9 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'minecraftFont2';
+  src: url('./assets/fonts/MinecraftRegular-Bmg3.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

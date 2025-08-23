@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         minecraft: ['minecraftFont', 'sans-serif'],
+        minecraft2: ['minecraftFont2', 'sans-serif'],
       },
     },
   },
