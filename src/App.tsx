@@ -68,10 +68,38 @@ function App() {
         <div className="absolute inset-0 z-0">
           <img src={caveBackground} alt="Cave Background" className="h-full w-full object-cover opacity-20" />
         </div>
-        <div className="px-4">
-          <h1 className="font-minecraft2 text-4xl font-bold">Welcome to My Portfolio</h1>
-          <p className="mt-2 text-gray-600">This is a showcase of my work and projects.</p>
+
+        {/* Sidebar Menu Card */}
+        <div className="md:col-span-1 relative w-[180px] h-[240px] left-10">
+          {/* Background Card */}
+          <img
+            src="/src/assets/overlays/book.png"
+            alt="Book Background"
+            className="absolute inset-0 w-full h-full object-contain"
+          />
+
+          {/* Menu */}
+          <nav
+            id="navbar-example3"
+            className="absolute inset-0 flex flex-col items-center justify-start space-y-3 pt-9 px-6"
+          >
+            {[
+              { href: "#item-1", text: "Introduction" },
+              { href: "#item-2", text: "Skills" },
+              { href: "#item-3", text: "Projects" },
+              { href: "#item-4", text: "Experience" },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.href}
+                className="w-full text-center px-2 py-1 rounded-md text-gray-500 font-minecraft2 shadow hover:bg-black/10 hover:text-black transition"
+              >
+                {item.text}
+              </a>
+            ))}
+          </nav>
         </div>
+
       </main>
 
       {/* <p classNameName="read-the-docs">
