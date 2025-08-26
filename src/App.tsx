@@ -2,6 +2,8 @@ import { Volume2, VolumeOff } from 'lucide-react'
 import './App.css'
 import avatarHead from './assets/avatarHead.png'
 import wallpaper from './assets/Cherry_Blossom_House _Minecraft.mp4'
+import openBook from './assets/overlays/book.png'
+import avatarHero from './assets/avatarBody5.png'
 import { useEffect, useRef, useState } from 'react'
 
 function App() {
@@ -47,7 +49,6 @@ function App() {
       block: "start"
     })
   }
-
 
   return (
     <>
@@ -137,7 +138,7 @@ function App() {
             {/* Hero Image */}
             <img
               className="w-full max-w-[400px]"
-              src="/src/assets/avatarBody5.png"
+              src={avatarHero}
               alt="Hero Preview"
             />
           </div>
@@ -149,7 +150,7 @@ function App() {
           <aside className="hidden md:block w-[180px] shrink-0 sticky top-24 h-fit">
             <div className="relative w-full h-[240px]">
               <img
-                src="/src/assets/overlays/book.png"
+                src={openBook}
                 alt="Book Background"
                 className="absolute inset-0 w-full h-full object-contain"
               />
