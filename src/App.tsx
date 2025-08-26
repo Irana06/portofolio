@@ -1,17 +1,35 @@
 import { Volume2, VolumeOff } from 'lucide-react'
 import './App.css'
 import avatarHead from './assets/avatarHead.png'
-import caveBackground from './assets/cavewallpaper.png'
-import { useRef, useState } from 'react'
+import wallpaper from './assets/Cherry_Blossom_House _Minecraft.mp4'
+import { useEffect, useRef, useState } from 'react'
 
 function App() {
   const music = import.meta.glob('./assets/music/*.mp3', { eager: true })
   const musicFiles = Object.values(music).map((mod) => (mod as { default: string }).default)
 
-  const randomIndex = Math.floor(Math.random() * musicFiles.length)
-  const audioRef = useRef(new Audio(musicFiles[randomIndex]))
+  const getRandomIndex = () => Math.floor(Math.random() * musicFiles.length)
 
+  // state untuk track index
+  const [currentTrack, setCurrentTrack] = useState(getRandomIndex())
+
+  // audioRef dibuat sesuai currentTrack
+  const audioRef = useRef(new Audio(musicFiles[currentTrack]))
   const [isPlaying, setIsPlaying] = useState(false)
+
+  // ganti lagu otomatis saat selesai
+  useEffect(() => {
+    const audio = audioRef.current
+    const handleEnded = () => {
+      const newIndex = getRandomIndex()
+      setCurrentTrack(newIndex) // update state
+      audio.src = musicFiles[newIndex]
+      audio.play()
+    }
+
+    audio.addEventListener('ended', handleEnded)
+    return () => audio.removeEventListener('ended', handleEnded)
+  }, [musicFiles])
 
   const toggleMusic = () => {
     const audio = audioRef.current
@@ -19,7 +37,6 @@ function App() {
       audio.pause()
     } else {
       audio.play()
-      audio.loop = true
     }
     setIsPlaying(!isPlaying)
   }
@@ -66,7 +83,7 @@ function App() {
       <main className="mt-24">
         {/* Background */}
         <div className="absolute inset-0 z-0">
-          <img src={caveBackground} alt="Cave Background" className="h-full w-full object-cover opacity-20" />
+          <video src={wallpaper} className="h-full w-full object-cover opacity-50" autoPlay muted loop />
         </div>
 
         {/* Sidebar Menu Card */}
@@ -103,7 +120,7 @@ function App() {
       </main>
 
       {/* <p classNameName="read-the-docs">
-        Click on the Vite and React logos to learn more
+        This site is a fan-made portfolio inspired by Minecraft. Minecraft is a trademark of Mojang Synergies AB.
       </p> */}
     </>
   )
