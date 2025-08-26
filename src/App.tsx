@@ -41,6 +41,14 @@ function App() {
     setIsPlaying(!isPlaying)
   }
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+  }
+
+
   return (
     <>
 
@@ -108,7 +116,16 @@ function App() {
                 discover skills, projects, and experiences crafted with passion ✨
               </p>
               <div className="flex gap-4 font-minecraft2">
-                <a href="#item-1" className="px-6 py-2.5 bg-green-600 hover:bg-green-700 rounded-xl text-white font-semibold transition">
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const id = e.currentTarget.getAttribute("href")?.replace("#", "");
+                    if (id) {
+                      scrollToSection(id);
+                    }
+                  }}
+                  href="#item-1"
+                  className="px-6 py-2.5 bg-green-600 hover:bg-green-700 rounded-xl text-white font-semibold transition">
                   Explore
                 </a>
                 <button className="px-6 py-2.5 bg-white/20 hover:bg-white/30 rounded-xl text-white font-semibold transition">
@@ -148,6 +165,13 @@ function App() {
                 ].map((item, i) => (
                   <a
                     key={i}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const id = e.currentTarget.getAttribute("href")?.replace("#", "");
+                      if (id) {
+                        scrollToSection(id);
+                      }
+                    }}
                     href={item.href}
                     className="w-full text-center px-2 py-1 rounded-md text-gray-500 font-minecraft2 shadow hover:bg-black/10 hover:text-black transition"
                   >
