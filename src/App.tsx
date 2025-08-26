@@ -80,43 +80,107 @@ function App() {
         </div>
       </header>
 
-      <main className="mt-24">
-        {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <video src={wallpaper} className="h-full w-full object-cover opacity-50" autoPlay muted loop />
-        </div>
+      <main>
+        {/* Section 1 - Hero dengan background video */}
+        <section className="relative w-screen min-h-screen flex items-center justify-center pt-24">
+          {/* Background Hero */}
+          <div className="absolute inset-0 -z-10">
+            <video
+              src={wallpaper}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+            />
+            {/* Optional overlay biar teks lebih jelas */}
+            <div className="absolute inset-0 bg-black/40"></div>
+          </div>
 
-        {/* Sidebar Menu Card */}
-        <div className="md:col-span-1 relative w-[180px] h-[240px] left-10">
-          {/* Background Card */}
-          <img
-            src="/src/assets/overlays/book.png"
-            alt="Book Background"
-            className="absolute inset-0 w-full h-full object-contain"
-          />
+          {/* Hero Content */}
+          <div className="flex flex-col lg:flex-row items-center justify-center px-10">
+            {/* Text Content */}
+            <div className="max-w-xl flex flex-col items-start gap-6">
+              <h1 className="text-5xl font-bold font-minecraft2 text-white leading-snug">
+                Welcome to my <span className="text-green-500">Portfolio!</span>
+              </h1>
+              <p className="text-lg text-white/90">
+                Explore my portfolio through the enchanting book of adventures —
+                discover skills, projects, and experiences crafted with passion ✨
+              </p>
+              <div className="flex gap-4 font-minecraft2">
+                <a href="#item-1" className="px-6 py-2.5 bg-green-600 hover:bg-green-700 rounded-xl text-white font-semibold transition">
+                  Explore
+                </a>
+                <button className="px-6 py-2.5 bg-white/20 hover:bg-white/30 rounded-xl text-white font-semibold transition">
+                  Contact Me
+                </button>
+              </div>
+            </div>
 
-          {/* Menu */}
-          <nav
-            id="navbar-example3"
-            className="absolute inset-0 flex flex-col items-center justify-start space-y-3 pt-9 px-6"
-          >
-            {[
-              { href: "#item-1", text: "Introduction" },
-              { href: "#item-2", text: "Skills" },
-              { href: "#item-3", text: "Projects" },
-              { href: "#item-4", text: "Experience" },
-            ].map((item, i) => (
-              <a
-                key={i}
-                href={item.href}
-                className="w-full text-center px-2 py-1 rounded-md text-gray-500 font-minecraft2 shadow hover:bg-black/10 hover:text-black transition"
+            {/* Hero Image */}
+            <img
+              className="w-full max-w-[400px]"
+              src="/src/assets/avatarBody5.png"
+              alt="Hero Preview"
+            />
+          </div>
+        </section>
+
+        {/* Section 2+ (background beda) */}
+        <section className="relative z-10 flex w-screen mx-auto px-10 py-20 gap-10 bg-[#0A2025]">
+          {/* Sidebar Sticky Menu - hidden on mobile */}
+          <aside className="hidden md:block w-[180px] shrink-0 sticky top-24 h-fit">
+            <div className="relative w-full h-[240px]">
+              <img
+                src="/src/assets/overlays/book.png"
+                alt="Book Background"
+                className="absolute inset-0 w-full h-full object-contain"
+              />
+              <nav
+                id="navbar-example3"
+                className="absolute inset-0 flex flex-col items-center justify-start space-y-3 pt-9 px-6"
               >
-                {item.text}
-              </a>
-            ))}
-          </nav>
-        </div>
+                {[
+                  { href: "#item-1", text: "Introduction" },
+                  { href: "#item-2", text: "Skills" },
+                  { href: "#item-3", text: "Projects" },
+                  { href: "#item-4", text: "Experience" },
+                ].map((item, i) => (
+                  <a
+                    key={i}
+                    href={item.href}
+                    className="w-full text-center px-2 py-1 rounded-md text-gray-500 font-minecraft2 shadow hover:bg-black/10 hover:text-black transition"
+                  >
+                    {item.text}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </aside>
 
+          {/* Content Area */}
+          <div className="flex-1 space-y-40">
+            <div id="item-1" className="min-h-screen bg-white/10 rounded-xl p-10 text-white">
+              <h2 className="text-3xl font-bold mb-4">Introduction</h2>
+              <p>Some introduction content...</p>
+            </div>
+
+            <div id="item-2" className="min-h-screen bg-white/10 rounded-xl p-10 text-white">
+              <h2 className="text-3xl font-bold mb-4">Skills</h2>
+              <p>Skills showcase...</p>
+            </div>
+
+            <div id="item-3" className="min-h-screen bg-white/10 rounded-xl p-10 text-white">
+              <h2 className="text-3xl font-bold mb-4">Projects</h2>
+              <p>Projects showcase...</p>
+            </div>
+
+            <div id="item-4" className="min-h-screen bg-white/10 rounded-xl p-10 text-white">
+              <h2 className="text-3xl font-bold mb-4">Experience</h2>
+              <p>Experience showcase...</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* <p classNameName="read-the-docs">
