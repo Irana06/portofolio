@@ -109,12 +109,12 @@ function App() {
           <div className="flex flex-col lg:flex-row items-center justify-center px-10">
             {/* Text Content */}
             <div className="max-w-xl flex flex-col items-start gap-6">
-              <h1 className="text-5xl font-bold font-minecraft2 text-white leading-snug">
-                Welcome to my <span className="text-green-500">Portfolio!</span>
+              <h1 className="text-5xl font-bold font-minecraft2 text-white leading-snug" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}>
+                Hi, I'm <span className="text-green-500">Yusufnova!</span>
               </h1>
               <p className="text-lg text-white/90">
-                Explore my portfolio through the enchanting book of adventures —
-                discover skills, projects, and experiences crafted with passion ✨
+                Experienced full-stack developer with 1+ years of expertise in Laravel,
+                ReactJS, and more.
               </p>
               <div className="flex gap-4 font-minecraft2">
                 <a
@@ -137,9 +137,9 @@ function App() {
 
             {/* Hero Image */}
             <img
-              className="w-full max-w-[400px]"
+              className="w-80 h-80 rounded-full border-4 border-green-500 object-cover"
               src={avatarHero}
-              alt="Hero Preview"
+              alt="Profile"
             />
           </div>
         </section>
@@ -185,25 +185,7 @@ function App() {
 
           {/* Content Area */}
           <div className="flex-1 space-y-40">
-            <div id="item-1" className="min-h-screen bg-white/10 rounded-xl p-10 text-white">
-              <h2 className="text-3xl font-bold mb-4">Introduction</h2>
-              <p>Some introduction content...</p>
-            </div>
 
-            <div id="item-2" className="min-h-screen bg-white/10 rounded-xl p-10 text-white">
-              <h2 className="text-3xl font-bold mb-4">Skills</h2>
-              <p>Skills showcase...</p>
-            </div>
-
-            <div id="item-3" className="min-h-screen bg-white/10 rounded-xl p-10 text-white">
-              <h2 className="text-3xl font-bold mb-4">Projects</h2>
-              <p>Projects showcase...</p>
-            </div>
-
-            <div id="item-4" className="min-h-screen bg-white/10 rounded-xl p-10 text-white">
-              <h2 className="text-3xl font-bold mb-4">Experience</h2>
-              <p>Experience showcase...</p>
-            </div>
           </div>
         </section>
       </main>
