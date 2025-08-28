@@ -1,10 +1,15 @@
-import { Volume2, VolumeOff } from 'lucide-react'
+import { ArrowBigRight, CalendarDays, FolderOpenDot, Volume2, VolumeOff } from 'lucide-react'
 import './App.css'
 import avatarHead from './assets/avatarHead.png'
 import wallpaper from './assets/Cherry_Blossom_House _Minecraft.mp4'
 import openBook from './assets/overlays/book.png'
 import avatarHero from './assets/avatarBody5.png'
+import fotoProfile from './assets/𝗪𝗮𝗴𝘂𝗿𝗶 𝗞𝗮𝗼𝗿𝘂𝗸𝗼.jpg'
+import fotoProfile2 from './assets/waguri_kaoruko.jpeg'
 import { useEffect, useRef, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faBriefcase, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   const music = import.meta.glob('./assets/music/*.mp3', { eager: true })
@@ -159,10 +164,10 @@ function App() {
                 className="absolute inset-0 flex flex-col items-center justify-start space-y-3 pt-9 px-6"
               >
                 {[
-                  { href: "#item-1", text: "Introduction" },
-                  { href: "#item-2", text: "Skills" },
-                  { href: "#item-3", text: "Projects" },
-                  { href: "#item-4", text: "Experience" },
+                  { href: "#profile", text: "Introduction" },
+                  { href: "#skills", text: "Skills" },
+                  { href: "#projects", text: "Projects" },
+                  { href: "#experience", text: "Experience" },
                 ].map((item, i) => (
                   <a
                     key={i}
@@ -185,6 +190,100 @@ function App() {
 
           {/* Content Area */}
           <div className="flex-1 space-y-40">
+            {/* Section 1 - Profile (dari contoh code) */}
+            <section
+              id="item-1"
+              className="relative flex flex-wrap items-center justify-center max-w-6xl mx-auto my-32 lg:my-0 px-6 lg:px-0"
+            >
+              {/* Card Kiri */}
+              <div
+                id="profile"
+                className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white/80 backdrop-blur-sm mx-6 lg:mx-0"
+              >
+                <div className="p-6 md:p-12 text-center lg:text-left">
+                  {/* Image untuk mobile */}
+                  <div
+                    className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-40 w-40 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url('${fotoProfile2}')`,
+                    }}
+                  ></div>
+
+                  <h1 className="font-minecraft2 text-3xl text-gray-700 font-bold pt-8 lg:pt-0" >Yusuf Novandra Sugiyanto</h1>
+                  <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+
+                  <p className="pt-2 text-gray-600 text-xs font-bold lg:text-sm flex items-center justify-center lg:justify-start">
+                    <FontAwesomeIcon icon={faBriefcase} className="h-4 fill-current text-green-700 pr-4" />
+                    Web Developer
+                  </p>
+
+                  <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
+                    <FontAwesomeIcon icon={faLocationDot} className="h-4 fill-current text-green-700 pr-4" />
+                    Sleman, Yogyakarta
+                  </p>
+
+                  <p className="pt-6 text-sm text-gray-700">
+                    A passionate and motivated vocational school graduate with hands-on experience in web development using Laravel and React JS. Completed a 6-month internship in a real working environment and developed personal projects focusing on full-stack development. Eager to contribute and grow in a dynamic and professional tech team.
+                  </p>
+
+                  <div className="pt-8 pb-8 flex flex-col-reverse lg:flex-row justify-between items-center gap-6">
+                    {/* Next button */}
+                    <button
+                      onClick={() => scrollToSection('#skills')}
+                      className="bg-green-700 hover:bg-green-900 text-white font-minecraft2 font-bold py-2 px-6 rounded-full shadow-lg transition flex items-center gap-2"
+                    >
+                      Next <ArrowBigRight className="w-5 h-5" aria-hidden="true" />
+                    </button>
+
+                    {/* Wrap Projects + Experience together */}
+                    <div className="flex items-center gap-4">
+                      {/* Projects with tooltip */}
+                      <div className="relative group">
+                        <div className="bg-green-700 rounded-full py-1 px-3 flex items-center gap-2 text-white font-minecraft2 font-bold cursor-pointer">
+                          <FolderOpenDot className="w-5 h-5" aria-hidden="true" />2+
+                        </div>
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-sm font-minecraft2 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
+                          2+ Projects
+                        </div>
+                      </div>
+
+                      {/* Experience with tooltip */}
+                      <div className="relative group">
+                        <div className="bg-green-700 rounded-full py-1 px-3 flex items-center gap-2 text-white font-minecraft2 font-bold cursor-pointer">
+                          <CalendarDays className="w-5 h-5" aria-hidden="true" />6+
+                        </div>
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-sm font-minecraft2 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
+                          Worked on frontend & backend projects (React, Laravel, etc.)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Social Icons */}
+                  <div className="flex justify-center lg:justify-start space-x-6">
+                    <a href="#" aria-label="LinkedIn" className='text-gray-500 hover:text-green-700 transition'>
+                      <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                    <a href="#" aria-label="Instagram" className='text-gray-500 hover:text-green-700 transition'>
+                      <FontAwesomeIcon icon={faInstagram} />
+                    </a>
+                    <a href="#" aria-label="GitHub" className='text-gray-500 hover:text-green-700 transition'>
+                      <FontAwesomeIcon icon={faGithub} />
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+
+              {/* Card Kanan (foto besar desktop) */}
+              <div className="w-full lg:w-2/5">
+                <img
+                  src={fotoProfile}
+                  className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
+                  alt="Profile"
+                />
+              </div>
+            </section>
 
           </div>
         </section>
