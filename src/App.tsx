@@ -2,6 +2,7 @@ import { ArrowBigRight, CalendarDays, FolderOpenDot, Volume2, VolumeOff } from '
 import './App.css'
 import avatarHead from './assets/avatarHead.png'
 import wallpaper from './assets/Cherry_Blossom_House _Minecraft.mp4'
+import wallpaperCats from './assets/backgrounds/wallpaper_cats_minecraft.jpg'
 import openBook from './assets/overlays/book.png'
 import avatarHero from './assets/avatarBody5.png'
 import fotoProfile from './assets/𝗪𝗮𝗴𝘂𝗿𝗶 𝗞𝗮𝗼𝗿𝘂𝗸𝗼.jpg'
@@ -89,18 +90,33 @@ function App() {
             </div>
             <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 md:items-center md:gap-5 font-minecraft2">
               <a aria-current="page"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const id = e.currentTarget.getAttribute("href")?.replace("#", "");
+                  if (id) {
+                    scrollToSection(id);
+                  }
+                }}
                 className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
                 ${scrolled ? "text-white" : "text-gray-700"} transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                href="#">Profile</a>
+                href="#hero">Home</a>
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  const id = e.currentTarget.getAttribute("href")?.replace("#", "");
+                  if (id) {
+                    scrollToSection(id);
+                  }
+                }}
+                className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
+                ${scrolled ? "text-white" : "text-gray-700"} transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
+                href="#profile">About Me</a>
               <a className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
                 ${scrolled ? "text-white" : "text-gray-700"} transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                href="#">About Me</a>
+                href="#certificate">Certificate</a>
               <a className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
                 ${scrolled ? "text-white" : "text-gray-700"} transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                href="#">Certificate</a>
-              <a className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
-                ${scrolled ? "text-white" : "text-gray-700"} transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                href="#">Contact</a>
+                href="#contact">Contact</a>
             </div>
 
             <span
@@ -124,7 +140,9 @@ function App() {
 
       <main>
         {/* Section 1 - Hero dengan background video */}
-        <section className="relative w-screen min-h-screen flex items-center justify-center pt-24">
+        <section
+          id="hero"
+          className="relative w-screen min-h-screen flex items-center justify-center pt-24">
           {/* Background Hero */}
           <div className="absolute inset-0 -z-10">
             <video
@@ -158,7 +176,7 @@ function App() {
                       scrollToSection(id);
                     }
                   }}
-                  href="#item-1"
+                  href="#profile"
                   className="px-6 py-2.5 bg-green-600 hover:bg-green-700 rounded-xl text-white font-semibold transition">
                   Explore
                 </a>
@@ -218,14 +236,23 @@ function App() {
 
           {/* Content Area */}
           <div className="flex-1 space-y-40">
-            {/* Section 1 - Profile (dari contoh code) */}
+
+            <div className="absolute inset-0 -z-10">
+              <img
+                src={wallpaperCats}
+                className="w-full h-full"
+              />
+              {/* Optional overlay biar teks lebih jelas */}
+              <div className="absolute inset-0 bg-black/40"></div>
+            </div>
+
+            {/* Section 1 - Profile */}
             <section
-              id="item-1"
-              className="relative flex flex-wrap items-center justify-center max-w-6xl mx-auto my-32 lg:my-0 px-6 lg:px-0"
+              id="profile"
+              className="relative flex flex-wrap items-center justify-center max-w-6xl mx-auto my-32 pt-32 pb-32 lg:my-0 px-6 lg:px-0"
             >
-              {/* Card Kiri */}
+              {/* Card Profile */}
               <div
-                id="profile"
                 className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white/80 backdrop-blur-sm mx-6 lg:mx-0"
               >
                 <div className="p-6 md:p-12 text-center lg:text-left">
