@@ -240,7 +240,7 @@ function App() {
             <div className="absolute inset-0 -z-10">
               <img
                 src={wallpaperCats}
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
               {/* Optional overlay biar teks lebih jelas */}
               <div className="absolute inset-0 bg-black/40"></div>
