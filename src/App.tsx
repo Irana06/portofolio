@@ -1,15 +1,14 @@
 import { ArrowBigRight, CalendarDays, FolderOpenDot } from 'lucide-react'
 import './App.css'
-import wallpaper from './assets/Cherry_Blossom_House _Minecraft.mp4'
 import wallpaperCats from './assets/backgrounds/wallpaper_cats_minecraft.jpg'
 import openBook from './assets/overlays/book.png'
-import avatarHero from './assets/avatarBody5.png'
 import fotoProfile from './assets/𝗪𝗮𝗴𝘂𝗿𝗶 𝗞𝗮𝗼𝗿𝘂𝗸𝗼.jpg'
 import fotoProfile2 from './assets/waguri_kaoruko.jpeg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faBriefcase, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import Navbar from './pages/Navbar'
+import Hero from './pages/Hero'
 
 function App() {
   const scrollToSection = (id: string) => {
@@ -27,60 +26,7 @@ function App() {
 
       <main>
         {/* Section 1 - Hero dengan background video */}
-        <section
-          id="hero"
-          className="relative w-screen min-h-screen flex items-center justify-center pt-24">
-          {/* Background Hero */}
-          <div className="absolute inset-0 -z-10">
-            <video
-              src={wallpaper}
-              className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-            />
-            {/* Optional overlay biar teks lebih jelas */}
-            <div className="absolute inset-0 bg-black/40"></div>
-          </div>
-
-          {/* Hero Content */}
-          <div className="flex flex-col lg:flex-row items-center justify-center px-10">
-            {/* Text Content */}
-            <div className="max-w-xl flex flex-col items-start gap-6">
-              <h1 className="text-5xl font-bold font-minecraft2 text-white leading-snug" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}>
-                Hi, I'm <span className="text-green-500">Yusufnova!</span>
-              </h1>
-              <p className="text-lg text-white/90">
-                Experienced full-stack developer with 1+ years of expertise in Laravel,
-                ReactJS, and more.
-              </p>
-              <div className="flex gap-4 font-minecraft2">
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const id = e.currentTarget.getAttribute("href")?.replace("#", "");
-                    if (id) {
-                      scrollToSection(id);
-                    }
-                  }}
-                  href="#profile"
-                  className="px-6 py-2.5 bg-green-600 hover:bg-green-700 rounded-xl text-white font-semibold transition">
-                  Explore
-                </a>
-                <button className="px-6 py-2.5 bg-white/20 hover:bg-white/30 rounded-xl text-white font-semibold transition">
-                  Contact Me
-                </button>
-              </div>
-            </div>
-
-            {/* Hero Image */}
-            <img
-              className="w-80 h-80 rounded-full border-4 border-green-500 object-cover"
-              src={avatarHero}
-              alt="Profile"
-            />
-          </div>
-        </section>
+        <Hero />
 
         {/* Section 2+ (background beda) */}
         <section className="relative z-10 flex w-screen mx-auto px-10 py-20 gap-10 bg-[#0A2025]">
