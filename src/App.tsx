@@ -1,7 +1,7 @@
 import './App.css'
 import Navbar from './pages/Navbar'
 import Hero from './pages/Hero'
-import Introduction from './pages/Introduction'
+import AboutMe from './pages/AboutMe'
 
 function App() {
 
@@ -15,17 +15,8 @@ function App() {
         {/* Section 1 - Hero */}
         <Hero />
 
-        {/* Section 2 - Introduction */}
-        <Introduction />
-
-        {/* Section 3 - Skills */}
-        {/* <Skills /> */}
-
-        {/* Section 4 - Projects */}
-        {/* <Projects /> */}
-
-        {/* Section 5 - Experience */}
-        {/* <Experience /> */}
+        {/* Section 2 - About Me */}
+        <AboutMe />
 
       </main>
 
