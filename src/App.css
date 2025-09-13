@@ -3,14 +3,32 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'minecraftFont';
-  src: url('./assets/fonts/Minecraft.ttf') format('truetype');
+  font-family: "minecraftFont";
+  src: url("./assets/fonts/Minecraft.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'minecraftFont2';
-  src: url('./assets/fonts/MinecraftRegular-Bmg3.otf') format('opentype');
+  font-family: "minecraftFont2";
+  src: url("./assets/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
+
+@keyframes waveLoop {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-waveFast {
+  animation: waveLoop 6s linear infinite;
+}
+
+.animate-waveMedium {
+  animation: waveLoop 12s linear infinite;
+}
+
+.animate-waveSlow {
+  animation: waveLoop 20s linear infinite;
+}
+
