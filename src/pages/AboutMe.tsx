@@ -57,7 +57,7 @@ export default function AboutMe() {
           >
             {[
               { href: "#profile", text: "Introduction" },
-              { href: "#skills", text: "Skills" },
+              { href: "#tools", text: "Tools" },
               { href: "#projects", text: "Projects" },
               { href: "#experience", text: "Experience" },
             ].map((item, i) => (
@@ -122,6 +122,28 @@ export default function AboutMe() {
                 Sleman, Yogyakarta
               </p>
 
+              {/* Skills */}
+              <div className="pt-6">
+                <h3 className="text-gray-700 text-sm font-minecraft2 font-bold">
+                  Skills
+                </h3>
+                <div className="mt-2 flex flex-wrap gap-2 justify-center lg:justify-start">
+                  {[
+                    "Laravel",
+                    "ReactJS",
+                    "TypeScript",
+                    "PHP"
+                  ].map((skill, index) => (
+                    <span
+                      key={index}
+                      className="bg-green-700 text-white text-xs font-minecraft2 font-semibold px-2.5 py-0.5 rounded-full"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <p className="pt-6 text-sm text-gray-700">
                 A passionate and motivated vocational school graduate with
                 hands-on experience in web development using Laravel and React
@@ -134,7 +156,7 @@ export default function AboutMe() {
               <div className="pt-8 pb-8 flex flex-col-reverse lg:flex-row justify-between items-center gap-6">
                 {/* Next button */}
                 <button
-                  onClick={() => scrollToSection("#skills")}
+                  onClick={() => scrollToSection("tools")}
                   className="bg-green-700 hover:bg-green-900 text-white font-minecraft2 font-bold py-2 px-6 rounded-full shadow-lg transition flex items-center gap-2"
                 >
                   Next <ArrowBigRight className="w-5 h-5" aria-hidden="true" />
@@ -204,9 +226,9 @@ export default function AboutMe() {
           </div>
         </section>
 
-        {/* Section 2 - Skills */}
+        {/* Section 2 - Tools */}
         <section
-          id="skills"
+          id="tools"
           className="max-w-6xl mx-auto my-32 px-6 pt-24 pb-32 lg:px-0"
         >
           <div className="mb-6">
