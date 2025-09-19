@@ -1,6 +1,6 @@
 import "../App.css";
 import wallpaper from "../assets/Cherry_Blossom_House _Minecraft.mp4";
-import avatarHero from "../assets/images/pp.jpg";
+import avatarHero from "../assets/waguri_kaoruko.jpeg";
 
 export default function Hero() {
   const scrollToSection = (id: string) => {

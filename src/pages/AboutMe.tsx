@@ -25,7 +25,7 @@ import PostgresSQL from "../assets/tools/PostgresSQL.png";
 import DBeaver from "../assets/tools/DBeaver.png";
 import FileZilla from "../assets/tools/FileZilla.png";
 import Git from "../assets/tools/Git.png";
-import GitHub from "../assets/tools/Github.png";
+import GitHub from "../assets/tools/GitHub.png";
 import GitLab from "../assets/tools/GitLab.png";
 import VSCode from "../assets/tools/Visual Studio Code (VS Code).png";
 import Postman from "../assets/tools/Postman.png";
@@ -33,13 +33,39 @@ import Docker from "../assets/tools/Docker.png";
 import Windows11 from "../assets/tools/Windows11.png";
 import Ubuntu from "../assets/tools/Ubuntu.png";
 
+// Projects Screenshots
+import Badmintoon from "../assets/projects/Badmintoon.jpg";
+import Reservation from "../assets/projects/Reservation.jpg";
+import { useState } from "react";
+
 export default function AboutMe() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
+
+  const projects = [
+    {
+      name: "Badmintoon Portal",
+      image: Badmintoon,
+      description:
+        "A web-based platform for managing badminton court participant registration, player profiles, and match scheduling, featuring real-time availability updates.",
+      techStack: ["Laravel", "Inertia ReactJS", "PostgreSQL"],
+      status: "Closed",
+    },
+    {
+      name: "Reservation System",
+      image: Reservation,
+      description:
+        "A web-based table reservation system for restaurants, allowing users to book tables online, ordering food and beverages, view real-time availability, and receive email confirmations.",
+      techStack: ["Laravel", "Inertia ReactJS", "PostgreSQL"],
+      status: "Ongoing",
+    },
+  ];
 
   return (
     <section className="relative z-10 flex w-screen mx-auto px-10 py-20 gap-10 bg-[#090909]">
@@ -84,7 +110,6 @@ export default function AboutMe() {
 
       {/* Content Area */}
       <div className="flex-1 space-y-40">
-
         {/* Section 1 - Profile */}
         <section
           id="profile"
@@ -128,19 +153,16 @@ export default function AboutMe() {
                   Skills
                 </h3>
                 <div className="mt-2 flex flex-wrap gap-2 justify-center lg:justify-start">
-                  {[
-                    "Laravel",
-                    "ReactJS",
-                    "TypeScript",
-                    "PHP"
-                  ].map((skill, index) => (
-                    <span
-                      key={index}
-                      className="bg-green-700 text-white text-xs font-minecraft2 font-semibold px-2.5 py-0.5 rounded-full"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  {["Laravel", "ReactJS", "TypeScript", "PHP"].map(
+                    (skill, index) => (
+                      <span
+                        key={index}
+                        className="bg-green-700 text-white text-xs font-minecraft2 font-semibold px-2.5 py-0.5 rounded-full"
+                      >
+                        {skill}
+                      </span>
+                    )
+                  )}
                 </div>
               </div>
 
@@ -261,7 +283,7 @@ export default function AboutMe() {
                 { icon: VSCode, name: "VSCode", note: "Code Editor" },
                 { icon: Postman, name: "Postman", note: "API Testing" },
                 { icon: Docker, name: "Docker", note: "Containerization" },
-                { icon: Windows11, name: "Windows 11", note: "Operating System" },
+                { icon: Windows11, name: "Windows 11", note: "Operating System"},
                 { icon: Ubuntu, name: "Ubuntu", note: "Operating System" },
               ].map((tool, index) => (
                 <div
@@ -278,8 +300,8 @@ export default function AboutMe() {
                     className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-500"
                   />
                   <div>
-                    <h4 className="font-bold">{tool.name}</h4>
-                    <p className="opacity-50">{tool.note}</p>
+                    <h4 className="font-bold text-white">{tool.name}</h4>
+                    <p className="opacity-50 text-gray-300">{tool.note}</p>
                   </div>
                 </div>
               ))}
@@ -287,6 +309,98 @@ export default function AboutMe() {
           </div>
         </section>
 
+        {/* Section 3 - Projects */}
+        <section id="projects" className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <span className="text-lg font-minecraft2 font-semibold text-blue-600">
+                My Projects
+              </span>
+              <h2 className="mt-2 text-4xl font-minecraft2 font-bold text-gray-600 sm:text-5xl">
+                Featured Projects
+              </h2>
+              <div className="mx-auto mt-6 h-1 w-20 rounded-md bg-blue-600"></div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-2">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                >
+                  <div className="h-64 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className={`h-full w-full object-cover transition duration-500 group-hover:scale-110 
+                        ${
+                          openIndex === index
+                            ? "blur-sm"
+                            : "group-hover:blur-sm"
+                        }`}
+                    />
+                  </div>
+
+                  <div
+                    className={`absolute inset-0 flex items-end bg-gradient-to-t from-gray-900 to-transparent p-6 transition-all duration-300
+                    ${
+                      openIndex === index
+                        ? "opacity-90 translate-y-0"
+                        : "opacity-0 translate-y-4 group-hover:opacity-90 group-hover:translate-y-0"
+                    }
+              `}
+                  >
+                    <div>
+                      <h3
+                        className="text-2xl font-bold text-white grid gap-1"
+                        style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.6)" }}
+                      >
+                        {project.name}{" "}
+                        <span
+                          className={`rounded-full text-center ${
+                            project.status === "Ongoing"
+                              ? "bg-blue-600"
+                              : project.status === "Cancelled"
+                              ? "bg-red-600"
+                              : "bg-gray-600"
+                          } px-3 py-1 text-xs font-semibold text-white`}
+                        >
+                          {project.status}
+                        </span>
+                      </h3>
+                      <p className="mt-2 text-gray-300">
+                        {project.description}
+                      </p>
+                      <div className="mt-4 flex space-x-2">
+                        {project.techStack.map((tech, i) => (
+                          <span
+                            key={i}
+                            className="rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-16 text-center">
+              <a
+                href="#"
+                className="inline-flex items-center rounded-full border border-blue-600 px-8 py-3 text-base font-medium text-blue-600 transition-colors duration-300 hover:bg-blue-600 hover:text-white"
+              >
+                Next
+                <i className="fas fa-long-arrow-alt-right ml-3"></i>
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );
