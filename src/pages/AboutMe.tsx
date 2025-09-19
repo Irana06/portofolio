@@ -48,6 +48,32 @@ export default function AboutMe() {
     });
   };
 
+  const skills = ["Laravel", "ReactJS", "TypeScript", "PHP"];
+
+  const tools = [
+    { icon: HTML, name: "HTML", note: "Markup Language" },
+    { icon: laravel, name: "Laravel", note: "PHP Framework" },
+    { icon: react, name: "React", note: "JavaScript Library" },
+    { icon: Vite, name: "Vite", note: "Build Tool" },
+    { icon: PHP, name: "PHP", note: "Server-side Language" },
+    { icon: JavaScript, name: "JavaScript", note: "Programming Language" },
+    { icon: TypeScript, name: "TypeScript", note: "Superset of JavaScript" },
+    { icon: Livewire, name: "Livewire", note: "Full-Stack Framework" },
+    { icon: TailwindCSS, name: "TailwindCSS", note: "CSS Framework" },
+    { icon: Figma, name: "Figma", note: "Design Tool" },
+    { icon: PostgresSQL, name: "PostgresSQL", note: "Database" },
+    { icon: DBeaver, name: "DBeaver", note: "Database Tool" },
+    { icon: FileZilla, name: "FileZilla", note: "FTP Client" },
+    { icon: Git, name: "Git", note: "Version Control" },
+    { icon: GitHub, name: "GitHub", note: "Code Hosting" },
+    { icon: GitLab, name: "GitLab", note: "Code Hosting" },
+    { icon: VSCode, name: "VSCode", note: "Code Editor" },
+    { icon: Postman, name: "Postman", note: "API Testing" },
+    { icon: Docker, name: "Docker", note: "Containerization" },
+    { icon: Windows11, name: "Windows 11", note: "Operating System" },
+    { icon: Ubuntu, name: "Ubuntu", note: "Operating System" },
+  ];
+
   const projects = [
     {
       name: "Badmintoon Portal",
@@ -153,16 +179,14 @@ export default function AboutMe() {
                   Skills
                 </h3>
                 <div className="mt-2 flex flex-wrap gap-2 justify-center lg:justify-start">
-                  {["Laravel", "ReactJS", "TypeScript", "PHP"].map(
-                    (skill, index) => (
-                      <span
-                        key={index}
-                        className="bg-green-700 text-white text-xs font-minecraft2 font-semibold px-2.5 py-0.5 rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    )
-                  )}
+                  {skills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="bg-green-700 text-white text-xs font-minecraft2 font-semibold px-2.5 py-0.5 rounded-full"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -263,29 +287,7 @@ export default function AboutMe() {
               </p>
             </div>
             <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-              {[
-                { icon: HTML, name: "HTML", note: "Markup Language" },
-                { icon: laravel, name: "Laravel", note: "PHP Framework" },
-                { icon: react, name: "React", note: "JavaScript Library" },
-                { icon: Vite, name: "Vite", note: "Build Tool" },
-                { icon: PHP, name: "PHP", note: "Server-side Language" },
-                { icon: JavaScript, name: "JavaScript", note: "Programming Language" },
-                { icon: TypeScript, name: "TypeScript", note: "Superset of JavaScript" },
-                { icon: Livewire, name: "Livewire", note: "Full-Stack Framework" },
-                { icon: TailwindCSS, name: "TailwindCSS", note: "CSS Framework" },
-                { icon: Figma, name: "Figma", note: "Design Tool" },
-                { icon: PostgresSQL, name: "PostgresSQL", note: "Database" },
-                { icon: DBeaver, name: "DBeaver", note: "Database Tool" },
-                { icon: FileZilla, name: "FileZilla", note: "FTP Client" },
-                { icon: Git, name: "Git", note: "Version Control" },
-                { icon: GitHub, name: "GitHub", note: "Code Hosting" },
-                { icon: GitLab, name: "GitLab", note: "Code Hosting" },
-                { icon: VSCode, name: "VSCode", note: "Code Editor" },
-                { icon: Postman, name: "Postman", note: "API Testing" },
-                { icon: Docker, name: "Docker", note: "Containerization" },
-                { icon: Windows11, name: "Windows 11", note: "Operating System"},
-                { icon: Ubuntu, name: "Ubuntu", note: "Operating System" },
-              ].map((tool, index) => (
+              {tools.map((tool, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group"
