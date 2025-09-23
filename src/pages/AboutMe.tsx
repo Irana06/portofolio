@@ -283,7 +283,7 @@ export default function AboutMe() {
                 My Tools
               </h3>
               <p className="text-gray-400 mt-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Here are some of the tools and technologies I work with:
               </p>
             </div>
             <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
@@ -319,7 +319,7 @@ export default function AboutMe() {
                 My Projects
               </span>
               <h2 className="mt-2 text-4xl font-minecraft2 font-bold text-gray-600 sm:text-5xl">
-                Featured Projects
+                Recent Works
               </h2>
               <div className="mx-auto mt-6 h-1 w-20 rounded-md bg-blue-600"></div>
             </div>
