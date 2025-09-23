@@ -5,12 +5,7 @@ import CV from "../assets/files/CV Resume - Yusuf Novandra.pdf";
 import { CloudDownload, Eye } from "lucide-react";
 
 export default function Hero() {
-  const skill = [
-    "React",
-    "Laravel",
-    "TypeScript",
-    "PHP",
-  ];
+  const skill = ["React", "Laravel", "TypeScript", "PHP"];
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -40,7 +35,6 @@ export default function Hero() {
       <div className="flex flex-col lg:flex-row items-center justify-between m-48 px-10 lg:px-20 gap-12 w-full">
         {/* Text Content */}
         <div className="max-w-xl flex flex-col items-start gap-6">
-
           <h1
             className="text-5xl font-bold font-minecraft2 text-white leading-snug"
             style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}
@@ -49,15 +43,21 @@ export default function Hero() {
             <span className="text-rose-200">Yusufnova!</span>
           </h1>
 
-          <h2 className="text-xl font-minecraft2 font-semibold text-gray-200" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}>
+          <h2
+            className="text-xl font-minecraft2 font-semibold text-gray-200"
+            style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)" }}
+          >
             Full-Stack Website Developer
           </h2>
 
           <div className="bg-black/30 p-4 rounded-lg shadow-md backdrop-blur-sm">
             <p className="text-lg text-white/90">
-              A motivated junior full-stack web developer with strong ambition to grow into a professional software engineer.
-              Crafting seamless digital experiences with expertise in both front-end and back-end development.
-              With hands-on experience in Laravel and React, I build functional and elegant web applications while continuously learning new technologies.
+              A motivated junior full-stack web developer with strong ambition
+              to grow into a professional software engineer. Crafting seamless
+              digital experiences with expertise in both front-end and back-end
+              development. With hands-on experience in Laravel and React, I
+              build functional and elegant web applications while continuously
+              learning new technologies.
             </p>
           </div>
 
@@ -79,7 +79,9 @@ export default function Hero() {
             <a
               onClick={(e) => {
                 e.preventDefault();
-                const id = e.currentTarget.getAttribute("href")?.replace("#", "");
+                const id = e.currentTarget
+                  .getAttribute("href")
+                  ?.replace("#", "");
                 if (id) {
                   scrollToSection(id);
                 }
