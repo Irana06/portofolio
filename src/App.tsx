@@ -4,6 +4,14 @@ import Hero from './pages/Hero'
 import AboutMe from './pages/AboutMe'
 import Footer from './pages/Footer'
 import ContactMe from './pages/ContactMe'
+import Certificate from './pages/Certificate'
+
+import { pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
 
 function App() {
 
@@ -20,7 +28,10 @@ function App() {
         {/* Section 2 - About Me */}
         <AboutMe />
 
-        {/* Section 3 - Contact Me */}
+        {/* Section 3 - Certificate */}
+        <Certificate />
+
+        {/* Section 4 - Contact Me */}
         <ContactMe />
 
       </main>
