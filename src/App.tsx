@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from './pages/Navbar'
 import Hero from './pages/Hero'
 import AboutMe from './pages/AboutMe'
+import Footer from './pages/Footer'
 
 function App() {
 
@@ -20,9 +21,9 @@ function App() {
 
       </main>
 
-      {/* <p classNameName="read-the-docs">
-        This site is a fan-made portfolio inspired by Minecraft. Minecraft is a trademark of Mojang Synergies AB.
-      </p> */}
+      {/* Footer */}
+      <Footer />
+
     </>
   )
 }
