@@ -51,7 +51,7 @@ export default function Hero() {
           </h2>
 
           <div className="bg-black/30 p-4 rounded-lg shadow-md backdrop-blur-sm">
-            <p className="text-lg text-white/90">
+            <p className="text-lg text-justify text-white/90">
               A motivated junior full-stack web developer with strong ambition
               to grow into a professional software engineer. Crafting seamless
               digital experiences with expertise in both front-end and back-end
