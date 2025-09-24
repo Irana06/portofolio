@@ -8,7 +8,7 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faBriefcase, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faBriefcase, faCalendarDays, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 // Tools Icons
 import HTML from "../assets/tools/HTML5.png";
@@ -90,6 +90,24 @@ export default function AboutMe() {
         "A web-based table reservation system for restaurants, allowing users to book tables online, ordering food and beverages, view real-time availability, and receive email confirmations.",
       techStack: ["Laravel", "Inertia ReactJS", "PostgreSQL"],
       status: "Ongoing",
+    },
+  ];
+
+  const experience = [
+    {
+      position: "PHP Programmer Intern",
+      company: "PT. Javan Cipta Solusi",
+      companyURL: "https://javan.co.id",
+      location: "Sleman, Yogyakarta",
+      contract: "6 months",
+      jobdesk: [
+        "Developed and maintained web applications using Laravel and ReactJS.",
+        "Collaborated with the team to code, test, and deploy new features.",
+        "Assisted in debugging and troubleshooting issues in existing applications.",
+      ],
+      startDate: "July 2024",
+      endDate: "January 2025",
+      technologies: ["Laravel", "ReactJS", "PostgreSQL"],
     },
   ];
 
@@ -190,7 +208,7 @@ export default function AboutMe() {
                 </div>
               </div>
 
-              <p className="pt-6 text-sm text-gray-700">
+              <p className="pt-6 text-sm text-justify text-gray-700">
                 A passionate and motivated vocational school graduate with
                 hands-on experience in web development using Laravel and React
                 JS. Completed a 6-month internship in a real working environment
@@ -275,7 +293,7 @@ export default function AboutMe() {
         {/* Section 2 - Tools */}
         <section
           id="tools"
-          className="max-w-6xl mx-auto my-32 px-6 pt-24 pb-32 lg:px-0"
+          className="max-w-6xl mx-auto my-32 px-4 pt-24 pb-32 lg:px-0"
         >
           <div className="mb-6">
             <div className="font-minecraft2 max-w-xl mx-auto text-center">
@@ -338,21 +356,19 @@ export default function AboutMe() {
                       src={project.image}
                       alt={project.name}
                       className={`h-full w-full object-cover transition duration-500 group-hover:scale-110 
-                        ${
-                          openIndex === index
-                            ? "blur-sm"
-                            : "group-hover:blur-sm"
+                        ${openIndex === index
+                          ? "blur-sm"
+                          : "group-hover:blur-sm"
                         }`}
                     />
                   </div>
 
                   <div
                     className={`absolute inset-0 flex items-end bg-gradient-to-t from-gray-900 to-transparent p-6 transition-all duration-300
-                    ${
-                      openIndex === index
+                    ${openIndex === index
                         ? "opacity-90 translate-y-0"
                         : "opacity-0 translate-y-4 group-hover:opacity-90 group-hover:translate-y-0"
-                    }
+                      }
               `}
                   >
                     <div>
@@ -362,18 +378,17 @@ export default function AboutMe() {
                       >
                         {project.name}{" "}
                         <span
-                          className={`rounded-full text-center ${
-                            project.status === "Ongoing"
-                              ? "bg-blue-600"
-                              : project.status === "Cancelled"
+                          className={`rounded-full text-center ${project.status === "Ongoing"
+                            ? "bg-blue-600"
+                            : project.status === "Cancelled"
                               ? "bg-red-600"
                               : "bg-gray-600"
-                          } px-3 py-1 text-xs font-semibold text-white`}
+                            } px-3 py-1 text-xs font-semibold text-white`}
                         >
                           {project.status}
                         </span>
                       </h3>
-                      <p className="mt-2 text-gray-300">
+                      <p className="mt-2 text-justify text-gray-300">
                         {project.description}
                       </p>
                       <div className="mt-4 flex space-x-2">
@@ -394,8 +409,12 @@ export default function AboutMe() {
 
             <div className="mt-16 text-center">
               <a
-                href="#"
-                className="inline-flex items-center rounded-full border border-blue-600 px-8 py-3 text-base font-medium text-blue-600 transition-colors duration-300 hover:bg-blue-600 hover:text-white"
+                href="#experience"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("experience");
+                }}
+                className="inline-flex items-center rounded-full border border-blue-600 px-8 py-3 text-base font-medium font-minecraft2 text-blue-600 transition-colors duration-300 hover:bg-blue-600 hover:text-white"
               >
                 Next
                 <i className="fas fa-long-arrow-alt-right ml-3"></i>
@@ -403,6 +422,123 @@ export default function AboutMe() {
             </div>
           </div>
         </section>
+
+        {/* Experience Section */}
+        <section id="experience" className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="text-center mb-2">
+            <h2 className="text-3xl font-minecraft2 font-bold text-gray-600">
+              My Experience
+            </h2>
+            <p className="mt-4 text-gray-500">
+              Here are some of my professional experiences:
+            </p>
+          </div>
+
+          <div className="max-w-xl mx-auto p-8">
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="absolute left-4 top-0 h-full w-0.5 bg-gray-200" />
+
+              <ul className="space-y-8">
+                {experience.map((exp, index) => (
+                  <li key={index} className="relative flex items-start">
+                    {/* Timeline Icon */}
+                    <div className="relative z-10 flex items-center justify-center w-8 h-8 bg-blue-500 rounded-full ring-8 ring-white">
+                      <svg
+                        className="h-5 w-5 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 11-2 0 1 1 0 012 0zm-1 3a2.5 2.5 0 00-2.5 2.5v3a2.5 2.5 0 005 0v-3A2.5 2.5 0 0010 10z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+
+                    {/* Content */}
+                    <div className="ml-6 flex-1">
+                      <div className="text-md text-gray-500">
+                        <div>
+                          <span className="font-medium text-white mr-2">
+                            {exp.position}
+                          </span>
+                          <span className="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm">
+                            <div className="absolute flex-shrink-0 flex items-center justify-center">
+                              <span
+                                className="h-1.5 w-1.5 rounded-full bg-green-500"
+                                aria-hidden="true"
+                              ></span>
+                            </div>
+                            <div className="ml-3.5 font-medium text-gray-900">
+                              {exp.contract}
+                            </div>
+                          </span>
+                        </div>
+
+                        <a
+                          href={exp.companyURL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-blue-600/70 hover:text-blue-500 transition-all duration-300"
+                        >
+                          {exp.company}
+                        </a>
+
+                        <span className="text-gray-400 text-xs ml-2">
+                          <FontAwesomeIcon
+                            icon={faLocationDot}
+                            className="h-3 w-3 mr-1"
+                          />
+                          <span className="ml-1">{exp.location}</span>
+                        </span>
+                      </div>
+
+                      <div className="mt-2 pb-2 text-xs text-gray-400">
+                        <FontAwesomeIcon
+                          icon={faCalendarDays}
+                          className="h-3 w-3 mr-1"
+                        />
+                        <span className="ml-1">
+                          {exp.startDate} - {exp.endDate}
+                        </span>
+                      </div>
+
+                      <div className="mt-2 text-sm text-justify text-gray-400">
+                        <p>
+                          <FontAwesomeIcon
+                            icon={faBriefcase}
+                            className="h-3 w-3 mr-1"
+                          />
+                          {exp.jobdesk.map((task, i) => (
+                            <span key={i} className="block">
+                              - {task}
+                              {i < exp.jobdesk.length - 1 && <br />}
+                            </span>
+                          ))}
+                        </p>
+                      </div>
+
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {exp.technologies.map((tech, i) => (
+                          <span
+                            key={i}
+                            className="inline-flex items-center rounded-full bg-blue-300 px-3 py-1 text-sm font-medium text-gray-700"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
       </div>
     </section>
   );
