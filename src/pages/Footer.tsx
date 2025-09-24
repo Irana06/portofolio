@@ -1,6 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Avatar from "../assets/avatarHead.png";
-import { faGithub, faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faInstagram,
+  faLinkedinIn,
+  faTelegram,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   const footerNavs = [
@@ -21,6 +26,12 @@ export default function Footer() {
       name: "Instagram",
       icon: faInstagram,
       color: "text-pink-500",
+    },
+    {
+      href: "https://www.linkedin.com/in/yusuf-novandra-74705731a",
+      name: "LinkedIn",
+      icon: faLinkedinIn,
+      color: "text-blue-700",
     },
   ];
 
@@ -60,9 +71,7 @@ export default function Footer() {
                 />
 
                 {/* Tooltip */}
-                <span
-                  className="absolute -top-10 opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-200 delay-75 bg-slate-500 items-center rounded-full px-3 py-1 text-sm font-medium text-white whitespace-nowrap shadow-lg"
-                >
+                <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-200 delay-75 bg-slate-500 items-center rounded-full px-3 py-1 text-sm font-medium text-white whitespace-nowrap shadow-lg">
                   {item.name}
                 </span>
               </a>

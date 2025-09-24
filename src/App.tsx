@@ -3,6 +3,7 @@ import Navbar from './pages/Navbar'
 import Hero from './pages/Hero'
 import AboutMe from './pages/AboutMe'
 import Footer from './pages/Footer'
+import ContactMe from './pages/ContactMe'
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
 
         {/* Section 2 - About Me */}
         <AboutMe />
+
+        {/* Section 3 - Contact Me */}
+        <ContactMe />
 
       </main>
 
