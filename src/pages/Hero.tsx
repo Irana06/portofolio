@@ -4,9 +4,14 @@ import avatarHero from "../assets/images/foto1x1.png";
 import CV from "../assets/files/CV Resume - Yusuf Novandra.pdf";
 import { CloudDownload, Eye } from "lucide-react";
 import WaveTop from "../components/WaveTop";
+import endermen_teleport from "../assets/sfx/endermen_teleport.mp3";
+import ender_pearl from "../assets/sfx/ender_pearl.mp3";
+
 
 export default function Hero() {
   const skill = ["React", "Laravel", "TypeScript", "PHP"];
+  const enderTeleport = new Audio(endermen_teleport);
+  const enderPearl = new Audio(ender_pearl);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -73,7 +78,8 @@ export default function Hero() {
                   ?.replace("#", "");
                 if (id) {
                   scrollToSection(id);
-                }
+                };
+                enderTeleport.play();
               }}
               href="#profile"
               className="relative flex items-center justify-center px-2 py-2 text-sm md:px-6 md:py-2.5 md:text-base bg-rose-300/70 hover:bg-white/20 rounded-xl text-black hover:backdrop-blur-sm font-semibold transition overflow-hidden group"
@@ -87,6 +93,7 @@ export default function Hero() {
             <a
               href={CV}
               download="Yusufnova_CV.pdf"
+              onClick={() => enderPearl.play()}
               className="relative flex items-center justify-center px-2 py-2 text-sm md:px-6 md:py-2.5 md:text-base bg-white/20 hover:bg-gray-300 rounded-xl text-white font-semibold transition overflow-hidden group"
             >
               <span className="transition-opacity duration-300 group-hover:opacity-0">

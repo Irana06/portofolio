@@ -11,7 +11,8 @@ import {
 import { faBriefcase, faCalendarDays, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 // SFX
-import bookOpened from "../assets/sfx/book_opened.mp3"
+import book_opened from "../assets/sfx/book_opened.mp3"
+import villager_1 from "../assets/sfx/villager_1.mp3"
 
 // Tools Icons
 import HTML from "../assets/tools/HTML5.png";
@@ -44,7 +45,8 @@ import { useRef, useState } from "react";
 export default function AboutMe() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const bookOpened = new Audio(book_opened);
+  const villager1 = new Audio(villager_1);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -150,9 +152,7 @@ export default function AboutMe() {
                   if (id) {
                     scrollToSection(id);
                   }
-                  audioRef.current?.pause();
-                  audioRef.current = new Audio(bookOpened);
-                  audioRef.current.play();
+                  bookOpened.play();
                 }}
               >
                 {item.text}
@@ -228,9 +228,11 @@ export default function AboutMe() {
               </p>
 
               <div className="pt-8 pb-8 flex flex-col-reverse lg:flex-row justify-between items-center gap-6">
-                {/* Next button */}
                 <button
-                  onClick={() => scrollToSection("tools")}
+                  onClick={() => {
+                    scrollToSection("tools");
+                    villager1.play();
+                  }}
                   className="bg-green-700 hover:bg-green-900 text-white font-minecraft2 font-bold py-2 px-6 rounded-full shadow-lg transition flex items-center gap-2"
                 >
                   Next <ArrowBigRight className="w-5 h-5" aria-hidden="true" />
@@ -426,6 +428,7 @@ export default function AboutMe() {
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("experience");
+                  villager1.play();
                 }}
                 className="inline-flex items-center rounded-full border border-blue-600 px-8 py-3 text-base font-medium font-minecraft2 text-blue-600 transition-colors duration-300 hover:bg-blue-600 hover:text-white"
               >

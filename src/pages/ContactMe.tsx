@@ -15,10 +15,17 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
+import enderchest_opened from "../assets/sfx/enderchest_opened.mp3";
+import enderchest_closed from "../assets/sfx/enderchest_closed.mp3";
+import exp_orb from "../assets/sfx/exp_orb.mp3";
 
 export default function ContactMe() {
   const [isOpen, setIsOpen] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+
+  const enderOpen = new Audio(enderchest_opened);
+  const enderClose = new Audio(enderchest_closed);
+  const expOrb = new Audio(exp_orb);
 
   const sosmedLinks = [
     {
@@ -72,6 +79,7 @@ export default function ContactMe() {
             onClick={() => {
               setIsOpen(true);
               setFadeOut(false);
+              enderOpen.play();
             }}
           />
           <span
@@ -233,6 +241,7 @@ export default function ContactMe() {
                   <div className="flex justify-between">
                     <button
                       type="submit"
+                      onClick={() => expOrb.play()}
                       className="flex items-center gap-2 bg-green-600 text-white font-bold py-2 px-5 rounded-md hover:scale-105 transition"
                     >
                       <FontAwesomeIcon icon={faPaperPlane} /> Send
@@ -240,6 +249,7 @@ export default function ContactMe() {
                     <a
                       onClick={() => {
                         setFadeOut(true);
+                        enderClose.play();
                       }}
                       className="flex items-center gap-2 bg-red-600 text-white font-bold py-2 px-5 rounded-md hover:text-white hover:scale-105 transition cursor-pointer"
                     >
@@ -393,6 +403,7 @@ export default function ContactMe() {
                   <div className="flex justify-between">
                     <button
                       type="submit"
+                      onClick={() => expOrb.play()}
                       className="flex items-center gap-2 bg-gradient-to-br from-blue-500 to-blue-400 text-white font-semibold py-2 px-4 rounded-full hover:scale-105 transition"
                     >
                       <FontAwesomeIcon icon={faPaperPlane} /> Send Message
@@ -400,6 +411,7 @@ export default function ContactMe() {
                     <a
                       onClick={() => {
                         setFadeOut(true);
+                        enderClose.play();
                       }}
                       className="flex items-center gap-2 bg-red-600 text-white font-bold py-2 px-5 rounded-md hover:text-white hover:scale-105 transition cursor-pointer"
                     >

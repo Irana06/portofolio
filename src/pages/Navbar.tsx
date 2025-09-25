@@ -3,6 +3,8 @@ import "../App.css";
 import avatarHead from "../assets/avatarHead.png";
 import { useEffect, useRef, useState } from "react";
 import bgm from "../assets/music/C418 - Haunt Muskie (Minecraft Volume Beta).mp3"
+import item_pick from "../assets/sfx/item_pickup.mp3"
+import door_opened from "../assets/sfx/door_opened.mp3"
 
 interface NavbarProps {
   loadingFinished?: boolean;
@@ -14,6 +16,9 @@ export default function Navbar({ loadingFinished }: NavbarProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const itemPickup = new Audio(item_pick);
+  const doorOpen = new Audio(door_opened);
 
   useEffect(() => {
     const audio = new Audio(bgm);
@@ -97,6 +102,7 @@ export default function Navbar({ loadingFinished }: NavbarProps) {
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection(id);
+                    itemPickup.play();
                   }}
                   className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
                   ${scrolled ? "text-white" : "text-gray-700"} 
@@ -131,7 +137,10 @@ export default function Navbar({ loadingFinished }: NavbarProps) {
                 className={`md:hidden bg-transparent border-hidden cursor-pointer inline-block rounded-lg px-2 py-1 text-sm font-medium
                 ${scrolled ? "text-white" : "text-gray-700"}
                 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => {
+                  setIsMenuOpen(!isMenuOpen);
+                  doorOpen.play();
+                }}
               >
                 {isMenuOpen ? (
                   <X className="w-6 h-6" />
@@ -152,6 +161,7 @@ export default function Navbar({ loadingFinished }: NavbarProps) {
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection(id);
+                    itemPickup.play();
                   }}
                   className={`block rounded-lg px-3 py-2 text-sm font-medium
                   ${scrolled ? "text-white" : "text-gray-700"} 
