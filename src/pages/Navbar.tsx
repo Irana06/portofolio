@@ -124,7 +124,7 @@ export default function Navbar() {
 
               {/* Mobile hamburger */}
               <button
-                className={`bg-transparent border-hidden cursor-pointer inline-block rounded-lg px-2 py-1 text-sm font-medium
+                className={`md:hidden bg-transparent border-hidden cursor-pointer inline-block rounded-lg px-2 py-1 text-sm font-medium
                 ${scrolled ? "text-white" : "text-gray-700"}
                 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
