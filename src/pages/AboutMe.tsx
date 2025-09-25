@@ -245,9 +245,12 @@ export default function AboutMe() {
                       <CalendarDays className="w-5 h-5" aria-hidden="true" />
                       6+
                     </div>
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-sm font-minecraft2 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
-                      Worked on frontend & backend projects (React, Laravel,
-                      etc.)
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-sm text-center font-minecraft2 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
+                      6+ Months experience working on
+                      <br />
+                      frontend & backend projects
+                      <br />
+                      (React, Laravel, etc.)
                     </div>
                   </div>
                 </div>

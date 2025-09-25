@@ -14,32 +14,32 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 export default function ContactMe() {
-const sosmedLinks = [
-  {
-    href: "https://t.me/Yusufnovaa",
-    name: "Telegram",
-    icon: faTelegram,
-    color: "text-blue-500",
-  },
-  {
-    href: "https://github.com/Yusufnova06",
-    name: "Github",
-    icon: faGithub,
-    color: "text-gray-800",
-  },
-  {
-    href: "https://www.instagram.com/yusuf.novandra/",
-    name: "Instagram",
-    icon: faInstagram,
-    color: "text-pink-500",
-  },
-  {
-    href: "https://www.linkedin.com/in/yusuf-novandra-74705731a",
-    name: "LinkedIn",
-    icon: faLinkedinIn,
-    color: "text-blue-700",
-  },
-];
+  const sosmedLinks = [
+    {
+      href: "https://t.me/Yusufnovaa",
+      name: "Telegram",
+      icon: faTelegram,
+      color: "text-blue-500",
+    },
+    {
+      href: "https://github.com/Yusufnova06",
+      name: "Github",
+      icon: faGithub,
+      color: "text-gray-800",
+    },
+    {
+      href: "https://www.instagram.com/yusuf.novandra/",
+      name: "Instagram",
+      icon: faInstagram,
+      color: "text-pink-500",
+    },
+    {
+      href: "https://www.linkedin.com/in/yusuf-novandra-74705731a",
+      name: "LinkedIn",
+      icon: faLinkedinIn,
+      color: "text-blue-700",
+    },
+  ];
 
   return (
     <section id="contact" className="container mx-auto px-4 py-16 font-minecraft2">
