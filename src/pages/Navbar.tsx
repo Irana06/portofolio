@@ -1,4 +1,4 @@
-import { Volume2, VolumeOff } from "lucide-react";
+import { Menu, Volume2, VolumeOff, X } from "lucide-react";
 import "../App.css";
 import avatarHead from "../assets/avatarHead.png";
 import { useEffect, useRef, useState } from "react";
@@ -12,14 +12,17 @@ export default function Navbar() {
 
   const getRandomIndex = () => Math.floor(Math.random() * musicFiles.length);
 
-  // state untuk track index
+  // state for track index
   const [currentTrack, setCurrentTrack] = useState(getRandomIndex());
 
-  // audioRef dibuat sesuai currentTrack
+  // ref for audio element
   const audioRef = useRef(new Audio(musicFiles[currentTrack]));
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // ganti lagu otomatis saat selesai
+  // state for mobile menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // effect to handle track end and play next random track
   useEffect(() => {
     const audio = audioRef.current;
     const handleEnded = () => {
@@ -48,6 +51,7 @@ export default function Navbar() {
       behavior: "smooth",
       block: "start",
     });
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
@@ -68,115 +72,94 @@ export default function Navbar() {
       >
         <div className="px-4">
           <div className="flex items-center justify-between">
-            <div className="flex shrink-0">
-              <div className="flex items-center">
-                <img className="h-10 w-auto" src={avatarHead} alt="" />
-                <p
-                  className={`font-minecraft2 inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200
-                    ${scrolled ? "text-white" : "text-gray-700"} 
-                    hover:bg-gray-100 hover:text-gray-900 pointer-events-none`}
-                >
-                  Yusufnova
-                </p>
-              </div>
-            </div>
-            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 md:items-center md:gap-5 font-minecraft2">
-              <a
-                aria-current="page"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const id = e.currentTarget
-                    .getAttribute("href")
-                    ?.replace("#", "");
-                  if (id) {
-                    scrollToSection(id);
-                  }
-                }}
-                className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
-                ${
-                  scrolled ? "text-white" : "text-gray-700"
-                } transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                href="#hero"
+            {/* Logo */}
+            <div className="flex items-center">
+              <img className="h-10 w-auto" src={avatarHead} alt="" />
+              <p
+                className={`font-minecraft2 inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200
+                  ${scrolled ? "text-white" : "text-gray-700"} 
+                  hover:bg-gray-100 hover:text-gray-900 pointer-events-none`}
               >
-                Home
-              </a>
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  const id = e.currentTarget
-                    .getAttribute("href")
-                    ?.replace("#", "");
-                  if (id) {
-                    scrollToSection(id);
-                  }
-                }}
-                className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
-                ${
-                  scrolled ? "text-white" : "text-gray-700"
-                } transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                href="#profile"
-              >
-                About Me
-              </a>
-              <a
-                className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
-                ${
-                  scrolled ? "text-white" : "text-gray-700"
-                } transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                href="#certificate"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const id = e.currentTarget
-                    .getAttribute("href")
-                    ?.replace("#", "");
-                  if (id) {
-                    scrollToSection(id);
-                  }
-                }}
-              >
-                Certificate
-              </a>
-              <a
-                className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
-                ${
-                  scrolled ? "text-white" : "text-gray-700"
-                } transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const id = e.currentTarget
-                    .getAttribute("href")
-                    ?.replace("#", "");
-                  if (id) {
-                    scrollToSection(id);
-                  }
-                }}
-              >
-                Contact
-              </a>
+                Yusufnova
+              </p>
             </div>
 
-            <span
-              onClick={toggleMusic}
-              className={`cursor-pointer inline-block rounded-lg px-2 py-1 text-sm font-medium
-              ${scrolled ? "text-white" : "text-gray-700"}
-               transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
-              aria-label="Toggle Music"
-              role="button"
-            >
-              {isPlaying ? (
-                <Volume2 className="w-6 h-6" />
-              ) : (
-                <VolumeOff className="w-6 h-6" />
-              )}
-            </span>
-            {/* <div className="flex items-center justify-end gap-3">
-              <a className="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
-                href="/login">Sign in</a>
-              <a className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                href="/login">Login</a>
-            </div> */}
+            {/* Desktop menu */}
+            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-5 font-minecraft2">
+              {["hero", "profile", "certificate", "contact"].map((id, i) => (
+                <a
+                  key={i}
+                  href={`#${id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(id);
+                  }}
+                  className={`inline-block rounded-lg px-2 py-1 text-sm font-medium
+                  ${scrolled ? "text-white" : "text-gray-700"} 
+                  transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
+                >
+                  {id === "hero"
+                    ? "Home"
+                    : id.charAt(0).toUpperCase() + id.slice(1)}
+                </a>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2">
+              {/* Music toggle */}
+              <span
+                onClick={toggleMusic}
+                className={`cursor-pointer inline-block rounded-lg px-2 py-1 text-sm font-medium
+                ${scrolled ? "text-white" : "text-gray-700"}
+                transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
+                aria-label="Toggle Music"
+                role="button"
+              >
+                {isPlaying ? (
+                  <Volume2 className="w-6 h-6" />
+                ) : (
+                  <VolumeOff className="w-6 h-6" />
+                )}
+              </span>
+
+              {/* Mobile hamburger */}
+              <button
+                className={`bg-transparent border-hidden cursor-pointer inline-block rounded-lg px-2 py-1 text-sm font-medium
+                ${scrolled ? "text-white" : "text-gray-700"}
+                transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile menu dropdown */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-3 flex flex-col gap-2 font-minecraft2">
+              {["hero", "profile", "certificate", "contact"].map((id, i) => (
+                <a
+                  key={i}
+                  href={`#${id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(id);
+                  }}
+                  className={`block rounded-lg px-3 py-2 text-sm font-medium
+                  ${scrolled ? "text-white" : "text-gray-700"} 
+                  transition hover:bg-gray-100 hover:text-gray-900`}
+                >
+                  {id === "hero"
+                    ? "Home"
+                    : id.charAt(0).toUpperCase() + id.slice(1)}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </header>
     </>
