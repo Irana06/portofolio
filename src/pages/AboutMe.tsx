@@ -114,7 +114,7 @@ export default function AboutMe() {
   return (
     <section className="relative mx-auto px-4 py-20 bg-[#090909]">
       {/* Sidebar Sticky Menu - hidden on mobile */}
-      <aside className="hidden md:block w-[180px] shrink-0 sticky top-24 h-fit left-48">
+      <aside className="hidden md:block w-[180px] shrink-0 sticky z-10 top-24 h-fit left-48">
         <div className="relative w-full h-[240px]">
           <img
             src={openBook}
