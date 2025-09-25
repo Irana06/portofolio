@@ -4,7 +4,11 @@ import avatarHead from "../assets/avatarHead.png";
 import { useEffect, useRef, useState } from "react";
 import bgm from "../assets/music/C418 - Haunt Muskie (Minecraft Volume Beta).mp3"
 
-export default function Navbar() {
+interface NavbarProps {
+  loadingFinished?: boolean;
+}
+
+export default function Navbar({ loadingFinished }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -21,6 +25,16 @@ export default function Navbar() {
       audioRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (loadingFinished && audioRef.current) {
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch((error) => {
+        console.error("Error playing audio:", error);
+      });
+    }
+  }, [loadingFinished]);
 
   const toggleMusic = () => {
     if (!audioRef.current) return;
