@@ -11,18 +11,14 @@ function App() {
     <>
       <Navbar />
       <main className="w-screen">
-        <section className="container mx-auto px-4">
-          <Hero />
-        </section>
-        <section className="container mx-auto px-4">
-          <AboutMe />
-        </section>
-        <section className="container mx-auto px-4">
-          <Certificate />
-        </section>
-        <section className="container mx-auto px-4">
-          <ContactMe />
-        </section>
+        {/* Hero Section */}
+        <Hero />
+        {/* About Me Section */}
+        <AboutMe />
+        {/* Certificate Section */}
+        <Certificate />
+        {/* Contact Me Section */}
+        <ContactMe />
       </main>
       <Footer />
     </>

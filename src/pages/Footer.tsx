@@ -36,45 +36,48 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-white bg-slate-900 px-4 py-5 mx-auto md:px-8">
-      <div className="max-w-lg sm:mx-auto sm:text-center">
-        <div className="flex items-center justify-center">
-          <img className="h-10 w-auto" src={Avatar} alt="" />
-          <p className="font-minecraft2 inline-block rounded-lg px-2 py-1 text-sm font-medium text-white pointer-events-none">
-            Yusufnova
+    <footer className="text-white bg-slate-900">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {/* Logo & text */}
+        <div className="text-center">
+          <div className="flex items-center justify-center">
+            <img className="h-10 w-auto" src={Avatar} alt="avatar" />
+            <p className="font-minecraft2 ml-2 rounded-lg px-2 py-1 text-sm font-medium text-white">
+              Yusufnova
+            </p>
+          </div>
+          <p className="leading-relaxed mt-3 text-[15px] text-gray-300">
+            This site is a fan-made portfolio inspired by Minecraft. <br />
+            Minecraft is a trademark of Mojang Synergies AB.
           </p>
         </div>
 
-        <p className="leading-relaxed mt-2 text-[15px] text-center">
-          This site is a fan-made portfolio inspired by Minecraft. Minecraft is
-          a trademark of Mojang Synergies AB.
-        </p>
-      </div>
+        {/* Bottom section */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-gray-700 pt-6">
+          <div className="text-xs text-gray-400 text-center sm:text-left">
+            &copy; 2025 Yusufnova. All rights reserved.
+          </div>
 
-      <div className="mt-8 ml-64 mr-64 items-center justify-between sm:flex">
-        <div className="mt-4 sm:mt-0 text-xs text-center">
-          &copy; 2025 Yusufnova. All rights reserved.
-        </div>
-        <div className="mt-6 sm:mt-0">
-          <ul className="flex items-center justify-center space-x-4">
+          {/* Social links */}
+          <ul className="flex items-center justify-center space-x-6">
             {footerNavs.map((item, idx) => (
-              <a
-                key={idx}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group flex flex-col items-center"
-              >
-                <FontAwesomeIcon
-                  icon={item.icon}
-                  className={`svg-icon w-8 h-8 mx-auto ${item.color}`}
-                />
-
-                {/* Tooltip */}
-                <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-200 delay-75 bg-slate-500 items-center rounded-full px-3 py-1 text-sm font-medium text-white whitespace-nowrap shadow-lg">
-                  {item.name}
-                </span>
-              </a>
+              <li key={idx} className="relative group">
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center"
+                >
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className={`w-6 h-6 ${item.color}`}
+                  />
+                  {/* Tooltip */}
+                  <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-200 delay-75 bg-slate-700 px-3 py-1 rounded-full text-sm text-white shadow-lg whitespace-nowrap">
+                    {item.name}
+                  </span>
+                </a>
+              </li>
             ))}
           </ul>
         </div>
