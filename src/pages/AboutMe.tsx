@@ -293,7 +293,7 @@ export default function AboutMe() {
         {/* Section 2 - Tools */}
         <section
           id="tools"
-          className="max-w-6xl mx-auto my-32 px-4 pt-24 pb-32 lg:px-0"
+          className="max-w-6xl mx-auto my-32 px-4 pt-32 pb-32 lg:px-0"
         >
           <div className="mb-6">
             <div className="font-minecraft2 max-w-xl mx-auto text-center">
@@ -330,7 +330,7 @@ export default function AboutMe() {
         </section>
 
         {/* Section 3 - Projects */}
-        <section id="projects" className="px-4 py-16 sm:px-6 lg:px-8">
+        <section id="projects" className="px-4 py-16 sm:px-6 lg:px-8 pt-32 pb-32">
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 text-center">
               <span className="text-lg font-minecraft2 font-semibold text-blue-600">
@@ -424,7 +424,7 @@ export default function AboutMe() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="px-4 py-16 sm:px-6 lg:px-8">
+        <section id="experience" className="px-4 py-16 sm:px-6 lg:px-8 pt-32 pb-32">
           <div className="text-center mb-2">
             <h2 className="text-3xl font-minecraft2 font-bold text-gray-600">
               My Experience
