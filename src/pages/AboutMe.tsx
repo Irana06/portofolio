@@ -112,9 +112,9 @@ export default function AboutMe() {
   ];
 
   return (
-    <section className="relative z-10 flex w-screen mx-auto px-10 py-20 gap-10 bg-[#090909]">
+    <section className="relative mx-auto px-4 py-20 bg-[#090909]">
       {/* Sidebar Sticky Menu - hidden on mobile */}
-      <aside className="hidden md:block w-[180px] shrink-0 sticky top-24 h-fit">
+      <aside className="hidden md:block w-[180px] shrink-0 sticky top-24 h-fit left-48">
         <div className="relative w-full h-[240px]">
           <img
             src={openBook}
@@ -153,7 +153,7 @@ export default function AboutMe() {
       </aside>
 
       {/* Content Area */}
-      <div className="flex-1 space-y-40">
+      <div className="flex-1 space-y-32 max-w-screen-xl mx-auto">
         {/* Section 1 - Profile */}
         <section
           id="profile"
@@ -245,9 +245,12 @@ export default function AboutMe() {
                       <CalendarDays className="w-5 h-5" aria-hidden="true" />
                       6+
                     </div>
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-sm font-minecraft2 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
-                      Worked on frontend & backend projects (React, Laravel,
-                      etc.)
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-sm text-center font-minecraft2 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
+                      6+ Months experience working on
+                      <br />
+                      frontend & backend projects
+                      <br />
+                      (React, Laravel, etc.)
                     </div>
                   </div>
                 </div>

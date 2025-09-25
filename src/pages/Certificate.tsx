@@ -44,10 +44,7 @@ export default function Certificate() {
   ];
 
   return (
-    <section
-      id="certificate"
-      className="relative w-screen min-h-screen pt-32 pb-32"
-    >
+    <section id="certificate" className="relative min-h-screen py-32">
       <WaveDown />
 
       <div className="py-12 md:py-16 lg:py-20">
@@ -65,7 +62,7 @@ export default function Certificate() {
           <span className="block xl:inline"></span>
         </h1> */}
       </div>
-      <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+      <div className="max-w-screen-xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 items-stretch">
           {certificates.map((cert, index) => (
             <div

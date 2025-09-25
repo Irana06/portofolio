@@ -7,31 +7,20 @@ import ContactMe from './pages/ContactMe'
 import Certificate from './pages/Certificate'
 
 function App() {
-
   return (
     <>
-
-      {/* Navbar */}
       <Navbar />
-
-      <main>
-        {/* Section 1 - Hero */}
+      <main className="w-screen">
+        {/* Hero Section */}
         <Hero />
-
-        {/* Section 2 - About Me */}
+        {/* About Me Section */}
         <AboutMe />
-
-        {/* Section 3 - Certificate */}
+        {/* Certificate Section */}
         <Certificate />
-
-        {/* Section 4 - Contact Me */}
+        {/* Contact Me Section */}
         <ContactMe />
-
       </main>
-
-      {/* Footer */}
       <Footer />
-
     </>
   )
 }
