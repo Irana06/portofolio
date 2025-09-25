@@ -8,9 +8,9 @@ import Certificate from './pages/Certificate'
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar />
-      <main className="w-screen">
+      <main className="w-[calc(100vw)] md:w-[calc(100vw-15px)]">
         {/* Hero Section */}
         <Hero />
         {/* About Me Section */}
@@ -21,7 +21,7 @@ function App() {
         <ContactMe />
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

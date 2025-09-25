@@ -112,7 +112,7 @@ export default function Hero() {
 
           {/* Status Badge */}
           {/* inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/20 text-sm text-white font-medium shadow-md */}
-          <span className="absolute -right-20 bottom-10 backdrop-blur-md inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/20 text-sm text-white font-medium shadow-md">
+          <span className="absolute -right-25 md:-right-20 bottom-10 backdrop-blur-md inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/20 text-sm text-white font-medium shadow-md">
             <span className="h-2 w-2 bg-green-500 rounded-full"></span>
             Available for new opportunities
           </span>
