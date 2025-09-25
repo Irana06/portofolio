@@ -2,48 +2,38 @@ import { Menu, Volume2, VolumeOff, X } from "lucide-react";
 import "../App.css";
 import avatarHead from "../assets/avatarHead.png";
 import { useEffect, useRef, useState } from "react";
+import bgm from "../assets/music/C418 - Haunt Muskie (Minecraft Volume Beta).mp3"
 
 export default function Navbar() {
-  const music = import.meta.glob("../assets/music/*.mp3", { eager: true });
-  const musicFiles = Object.values(music).map(
-    (mod) => (mod as { default: string }).default
-  );
   const [scrolled, setScrolled] = useState(false);
-
-  const getRandomIndex = () => Math.floor(Math.random() * musicFiles.length);
-
-  // state for track index
-  const [currentTrack, setCurrentTrack] = useState(getRandomIndex());
-
-  // ref for audio element
-  const audioRef = useRef(new Audio(musicFiles[currentTrack]));
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // state for mobile menu
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // effect to handle track end and play next random track
   useEffect(() => {
-    const audio = audioRef.current;
-    const handleEnded = () => {
-      const newIndex = getRandomIndex();
-      setCurrentTrack(newIndex); // update state
-      audio.src = musicFiles[newIndex];
-      audio.play();
-    };
+    const audio = new Audio(bgm);
+    audio.loop = true;
+    audioRef.current = audio;
 
-    audio.addEventListener("ended", handleEnded);
-    return () => audio.removeEventListener("ended", handleEnded);
-  }, [musicFiles]);
+    return () => {
+      audio.pause();
+      audioRef.current = null;
+    };
+  }, []);
 
   const toggleMusic = () => {
-    const audio = audioRef.current;
+    if (!audioRef.current) return;
     if (isPlaying) {
-      audio.pause();
+      audioRef.current.pause();
+      setIsPlaying(false);
     } else {
-      audio.play();
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch((error) => {
+        console.error("Error playing audio:", error);
+      });
     }
-    setIsPlaying(!isPlaying);
   };
 
   const scrollToSection = (id: string) => {
