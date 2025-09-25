@@ -10,6 +10,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faBriefcase, faCalendarDays, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
+// SFX
+import bookOpened from "../assets/sfx/book_opened.mp3"
+
 // Tools Icons
 import HTML from "../assets/tools/HTML5.png";
 import laravel from "../assets/tools/laravel.png";
@@ -36,10 +39,12 @@ import Ubuntu from "../assets/tools/Ubuntu.png";
 // Projects Screenshots
 import Badmintoon from "../assets/projects/Badmintoon.jpg";
 import Reservation from "../assets/projects/Reservation.jpg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function AboutMe() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -49,6 +54,13 @@ export default function AboutMe() {
   };
 
   const skills = ["Laravel", "ReactJS", "TypeScript", "PHP"];
+
+  const sidebar = [
+    { href: "#profile", text: "Introduction", },
+    { href: "#tools", text: "Tools" },
+    { href: "#projects", text: "Projects" },
+    { href: "#experience", text: "Experience" },
+  ];
 
   const tools = [
     { icon: HTML, name: "HTML", note: "Markup Language" },
@@ -125,14 +137,11 @@ export default function AboutMe() {
             id="navbar-example3"
             className="absolute inset-0 flex flex-col items-center justify-start space-y-3 pt-9 px-6"
           >
-            {[
-              { href: "#profile", text: "Introduction" },
-              { href: "#tools", text: "Tools" },
-              { href: "#projects", text: "Projects" },
-              { href: "#experience", text: "Experience" },
-            ].map((item, i) => (
+            {sidebar.map((item, i) => (
               <a
                 key={i}
+                href={item.href}
+                className="w-full text-center px-2 py-1 rounded-md text-gray-500 font-minecraft2 shadow hover:bg-black/10 hover:text-black transition"
                 onClick={(e) => {
                   e.preventDefault();
                   const id = e.currentTarget
@@ -141,9 +150,10 @@ export default function AboutMe() {
                   if (id) {
                     scrollToSection(id);
                   }
+                  audioRef.current?.pause();
+                  audioRef.current = new Audio(bookOpened);
+                  audioRef.current.play();
                 }}
-                href={item.href}
-                className="w-full text-center px-2 py-1 rounded-md text-gray-500 font-minecraft2 shadow hover:bg-black/10 hover:text-black transition"
               >
                 {item.text}
               </a>
