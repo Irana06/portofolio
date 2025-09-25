@@ -36,7 +36,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-white px-4 py-5 max-w-screen-xl mx-auto md:px-8">
+    <footer className="text-white bg-slate-900 px-4 py-5 mx-auto md:px-8">
       <div className="max-w-lg sm:mx-auto sm:text-center">
         <div className="flex items-center justify-center">
           <img className="h-10 w-auto" src={Avatar} alt="" />
@@ -51,7 +51,7 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="mt-8 items-center justify-between sm:flex">
+      <div className="mt-8 ml-64 mr-64 items-center justify-between sm:flex">
         <div className="mt-4 sm:mt-0 text-xs text-center">
           &copy; 2025 Yusufnova. All rights reserved.
         </div>

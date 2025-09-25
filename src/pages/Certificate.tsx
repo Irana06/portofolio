@@ -2,6 +2,7 @@ import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bootcampCert from "../assets/certificates/bootcamp.pdf";
 import internship from "../assets/certificates/internship.pdf";
+import WaveDown from "../components/WaveDown";
 
 export default function Certificate() {
   const certificates = [
@@ -43,7 +44,12 @@ export default function Certificate() {
   ];
 
   return (
-    <section id="certificate" className="w-screen min-h-screen pt-32 pb-32">
+    <section
+      id="certificate"
+      className="relative w-screen min-h-screen pt-32 pb-32"
+    >
+      <WaveDown />
+
       <div className="py-12 md:py-16 lg:py-20">
         <h1 className="text-center text-3xl font-minecraft2 font-semibold capitalize text-gray-100 lg:text-4xl">
           My <span className="text-red-700">Certificate</span>
