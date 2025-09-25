@@ -42,10 +42,7 @@ const sosmedLinks = [
 ];
 
   return (
-    <section
-      id="contact"
-      className="contact-section py-16 px-4 font-minecraft2 pb-32"
-    >
+    <section id="contact" className="container mx-auto px-4 py-16 font-minecraft2">
       {/* Desktop */}
       <div
         className="hidden md:flex relative w-full max-w-5xl mx-auto bg-center bg-no-repeat bg-contain items-center justify-center"

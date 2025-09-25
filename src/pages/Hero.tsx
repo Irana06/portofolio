@@ -16,24 +16,12 @@ export default function Hero() {
   };
 
   return (
-    <section
-      id="hero"
-      className="relative w-screen min-h-screen flex items-center justify-center pt-24"
-    >
-      {/* Background Hero */}
+    <section id="hero" className="relative min-h-screen flex items-center justify-center py-24">
       <div className="absolute inset-0 -z-10">
-        <video
-          src={wallpaper}
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-        />
+        <video src={wallpaper} className="w-full h-full object-cover" autoPlay muted loop />
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
-
-      {/* Hero Content */}
-      <div className="flex flex-col lg:flex-row items-center justify-between m-48 px-10 lg:px-20 gap-12 w-full">
+      <div className="max-w-screen-xl w-full flex flex-col lg:flex-row items-center justify-between px-4 gap-12">
         {/* Text Content */}
         <div className="max-w-xl flex flex-col items-start gap-6">
           <h1

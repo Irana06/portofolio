@@ -112,7 +112,7 @@ export default function AboutMe() {
   ];
 
   return (
-    <section className="relative z-10 flex w-screen mx-auto px-10 py-20 gap-10 bg-[#090909]">
+    <section className="relative z-10 container mx-auto px-4 py-20 bg-[#090909]">
       {/* Sidebar Sticky Menu - hidden on mobile */}
       <aside className="hidden md:block w-[180px] shrink-0 sticky top-24 h-fit">
         <div className="relative w-full h-[240px]">
@@ -153,7 +153,7 @@ export default function AboutMe() {
       </aside>
 
       {/* Content Area */}
-      <div className="flex-1 space-y-40">
+      <div className="flex-1 space-y-32 max-w-screen-xl mx-auto">
         {/* Section 1 - Profile */}
         <section
           id="profile"

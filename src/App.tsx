@@ -7,31 +7,24 @@ import ContactMe from './pages/ContactMe'
 import Certificate from './pages/Certificate'
 
 function App() {
-
   return (
     <>
-
-      {/* Navbar */}
       <Navbar />
-
-      <main>
-        {/* Section 1 - Hero */}
-        <Hero />
-
-        {/* Section 2 - About Me */}
-        <AboutMe />
-
-        {/* Section 3 - Certificate */}
-        <Certificate />
-
-        {/* Section 4 - Contact Me */}
-        <ContactMe />
-
+      <main className="w-screen">
+        <section className="container mx-auto px-4">
+          <Hero />
+        </section>
+        <section className="container mx-auto px-4">
+          <AboutMe />
+        </section>
+        <section className="container mx-auto px-4">
+          <Certificate />
+        </section>
+        <section className="container mx-auto px-4">
+          <ContactMe />
+        </section>
       </main>
-
-      {/* Footer */}
       <Footer />
-
     </>
   )
 }
