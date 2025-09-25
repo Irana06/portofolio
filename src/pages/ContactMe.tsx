@@ -44,7 +44,7 @@ const sosmedLinks = [
   return (
     <section
       id="contact"
-      className="contact-section py-16 px-4 font-minecraft2"
+      className="contact-section py-16 px-4 font-minecraft2 pb-32"
     >
       {/* Desktop */}
       <div
