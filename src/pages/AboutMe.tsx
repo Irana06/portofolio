@@ -1,4 +1,4 @@
-import { ArrowBigRight, CalendarDays, FolderOpenDot } from "lucide-react";
+import { ArrowBigDown, ArrowBigRight, CalendarDays, FolderOpenDot } from "lucide-react";
 import openBook from "../assets/overlays/book.png";
 import fotoProfile from "../assets/𝗪𝗮𝗴𝘂𝗿𝗶 𝗞𝗮𝗼𝗿𝘂𝗸𝗼.jpg";
 import fotoProfile2 from "../assets/images/foto1x1.png";
@@ -340,6 +340,17 @@ export default function AboutMe() {
                   </div>
                 </div>
               ))}
+              <div className="col-span-full flex justify-center mt-8">
+                <button
+                  onClick={() => {
+                    scrollToSection("projects");
+                    villager1.play();
+                  }}
+                  className="hover:bg-blue-800 text-white font-minecraft2 font-bold py-2 px-8 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2"
+                >
+                  Next <ArrowBigDown className="w-5 h-5" aria-hidden="true" />
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -430,10 +441,9 @@ export default function AboutMe() {
                   scrollToSection("experience");
                   villager1.play();
                 }}
-                className="inline-flex items-center rounded-full border border-blue-600 px-8 py-3 text-base font-medium font-minecraft2 text-blue-600 transition-colors duration-300 hover:bg-blue-600 hover:text-white"
+                className="inline-flex gap-2 items-center rounded-full border border-blue-600 px-8 py-3 text-base font-medium font-minecraft2 text-blue-600 transition-colors duration-300 hover:bg-blue-600 hover:text-white"
               >
-                Next
-                <i className="fas fa-long-arrow-alt-right ml-3"></i>
+                Next <ArrowBigDown className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>
