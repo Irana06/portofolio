@@ -124,6 +124,15 @@ export default function Navbar() {
                   scrolled ? "text-white" : "text-gray-700"
                 } transition-all duration-200 hover:bg-gray-100 hover:text-gray-900`}
                 href="#certificate"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const id = e.currentTarget
+                    .getAttribute("href")
+                    ?.replace("#", "");
+                  if (id) {
+                    scrollToSection(id);
+                  }
+                }}
               >
                 Certificate
               </a>

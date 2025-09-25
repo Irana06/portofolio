@@ -6,13 +6,6 @@ import Footer from './pages/Footer'
 import ContactMe from './pages/ContactMe'
 import Certificate from './pages/Certificate'
 
-import { pdfjs } from 'react-pdf';
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
-
 function App() {
 
   return (
