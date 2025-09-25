@@ -1,7 +1,7 @@
 import { ArrowBigRight, CalendarDays, FolderOpenDot } from "lucide-react";
 import openBook from "../assets/overlays/book.png";
 import fotoProfile from "../assets/𝗪𝗮𝗴𝘂𝗿𝗶 𝗞𝗮𝗼𝗿𝘂𝗸𝗼.jpg";
-import fotoProfile2 from "../assets/waguri_kaoruko.jpeg";
+import fotoProfile2 from "../assets/images/foto1x1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
