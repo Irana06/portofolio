@@ -2,6 +2,8 @@ import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bootcampCert from "../assets/certificates/bootcamp.pdf";
 import internship from "../assets/certificates/internship.pdf";
+import training from "../assets/certificates/trainingLaravel.pdf"
+import PublicSpeaking from "../assets/certificates/PublicSpeaking.pdf"
 import WaveDown from "../components/WaveDown";
 
 export default function Certificate() {
@@ -31,15 +33,15 @@ export default function Certificate() {
       category: "Training",
       institution:
         "Computer Engineering Student Association-Yogyakarta University of Technology",
-      pdfFile: internship,
+      pdfFile: training,
     },
     {
       title: "Let's Be A Great Master of Ceremony",
       description:
         'In the public speaking training event "let\'s be a great master of ceremony" organized by the Prodamat group of Islamic Religious Education Masters students at UAD, 3 November 2023.',
-      category: "Training",
+      category: "Public Speaking",
       institution: "Prodamat-MPAIUAD",
-      pdfFile: internship,
+      pdfFile: PublicSpeaking,
     },
   ];
 
