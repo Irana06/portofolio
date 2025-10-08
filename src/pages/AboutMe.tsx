@@ -219,12 +219,7 @@ export default function AboutMe() {
               </div>
 
               <p className="pt-6 text-sm text-justify text-gray-700">
-                A passionate and motivated vocational school graduate with
-                hands-on experience in web development using Laravel and React
-                JS. Completed a 6-month internship in a real working environment
-                and developed personal projects focusing on full-stack
-                development. Eager to contribute and grow in a dynamic and
-                professional tech team.
+                Enthusiastic and detail-oriented junior web developer with practical experience in building full-stack applications using Laravel and React (Inertia.js). Completed a 6-month internship at PT Javan Cipta Solusi and developed several personal projects. Passionate about backend development, clean code, and continuous learning.
               </p>
 
               <div className="pt-8 pb-8 flex flex-col-reverse lg:flex-row justify-between items-center gap-6">

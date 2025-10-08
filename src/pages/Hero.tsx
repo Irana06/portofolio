@@ -46,12 +46,7 @@ export default function Hero() {
 
           <div className="bg-black/30 p-4 rounded-lg shadow-md backdrop-blur-sm">
             <p className="text-lg text-justify text-white/90">
-              A motivated junior full-stack web developer with strong ambition
-              to grow into a professional software engineer. Crafting seamless
-              digital experiences with expertise in both front-end and back-end
-              development. With hands-on experience in Laravel and React, I
-              build functional and elegant web applications while continuously
-              learning new technologies.
+              A passionate junior full-stack web developer eager to grow into a professional software engineer. I craft seamless and user-friendly digital experiences using Laravel and React, focusing on both functionality and elegance. With hands-on experience in full-stack development, I continuously learn and adapt to new technologies to deliver impactful web solutions.
             </p>
           </div>
 

@@ -32,7 +32,7 @@ export default function Certificate() {
         'In the Community Service activity with the theme "Meningkatkan Kemampuan Dasar Pemrograman Web Dengan Pelatihan dan Pengembangan Framework" organized by the Computer Engineering Student Association of Yogyakarta Technology University on May 22, 2024',
       category: "Training",
       institution:
-        "Computer Engineering Student Association-Yogyakarta University of Technology",
+        "Computer Engineering Student Association - Universitas Teknologi Yogyakarta",
       certIMG: training,
     },
     {
