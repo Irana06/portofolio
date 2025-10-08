@@ -40,7 +40,7 @@ import Ubuntu from "../assets/tools/Ubuntu.png";
 // Projects Screenshots
 import Badmintoon from "../assets/projects/Badmintoon.jpg";
 import Reservation from "../assets/projects/Reservation.jpg";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export default function AboutMe() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
