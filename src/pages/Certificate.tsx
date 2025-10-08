@@ -1,9 +1,9 @@
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import bootcampCert from "../assets/certificates/bootcamp.pdf";
-import internship from "../assets/certificates/internship.pdf";
-import training from "../assets/certificates/trainingLaravel.pdf"
-import PublicSpeaking from "../assets/certificates/PublicSpeaking.pdf"
+import bootcampCert from "../assets/certificates/BootcampFE.png";
+import internship from "../assets/certificates/InternshipJavan.png";
+import training from "../assets/certificates/TrainingLaravel.png"
+import PublicSpeaking from "../assets/certificates/PublicSpeaking.png"
 import WaveDown from "../components/WaveDown";
 
 export default function Certificate() {
@@ -15,7 +15,7 @@ export default function Certificate() {
         "Honored with this certificate of completion for their role as a PARTICIPANT in the MINI BOOTCAMP - OPTIMALISASI TASK DENGAN ALURKERJA UNTUK FRONT END conducted on November 15, 2024.",
       category: "Bootcamp",
       institution: "Geek Academy",
-      pdfFile: bootcampCert,
+      certIMG: bootcampCert,
     },
     {
       title: "Program Pemagangan di PT Javan Cipta Solusi",
@@ -23,7 +23,7 @@ export default function Certificate() {
         'Has participated in "Program Pemagangan di PT Javan Cipta Solusi" on July 17, 2024 to January 20, 2025 as a Programmer.',
       category: "Internship",
       institution: "PT. Javan Cipta Solusi",
-      pdfFile: internship,
+      certIMG: internship,
     },
     {
       title:
@@ -33,7 +33,7 @@ export default function Certificate() {
       category: "Training",
       institution:
         "Computer Engineering Student Association-Yogyakarta University of Technology",
-      pdfFile: training,
+      certIMG: training,
     },
     {
       title: "Let's Be A Great Master of Ceremony",
@@ -41,7 +41,7 @@ export default function Certificate() {
         'In the public speaking training event "let\'s be a great master of ceremony" organized by the Prodamat group of Islamic Religious Education Masters students at UAD, 3 November 2023.',
       category: "Public Speaking",
       institution: "Prodamat-MPAIUAD",
-      pdfFile: PublicSpeaking,
+      certIMG: PublicSpeaking,
     },
   ];
 
@@ -73,7 +73,7 @@ export default function Certificate() {
             >
               <div className="relative">
                 <div>
-                  <iframe src={cert.pdfFile} className="w-full h-48" />
+                  <img src={cert.certIMG} alt="Certificate" className="w-full" />
                   <div className="hover:bg-transparent transition duration-300 absolute cursor-pointer bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
                 </div>
                 <span className="cursor-default">
