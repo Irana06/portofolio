@@ -271,21 +271,21 @@ export default function AboutMe() {
               {/* Social Icons */}
               <div className="flex justify-center lg:justify-start space-x-6">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/yusuf-novandra-74705731a"
                   aria-label="LinkedIn"
                   className="text-gray-500 hover:text-green-700 transition"
                 >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/yusuf.novandra/"
                   aria-label="Instagram"
                   className="text-gray-500 hover:text-green-700 transition"
                 >
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/Yusufnova06"
                   aria-label="GitHub"
                   className="text-gray-500 hover:text-green-700 transition"
                 >
