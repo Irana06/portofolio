@@ -272,6 +272,8 @@ export default function AboutMe() {
               <div className="flex justify-center lg:justify-start space-x-6">
                 <a
                   href="https://www.linkedin.com/in/yusuf-novandra-74705731a"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   className="text-gray-500 hover:text-green-700 transition"
                 >
@@ -279,6 +281,8 @@ export default function AboutMe() {
                 </a>
                 <a
                   href="https://www.instagram.com/yusuf.novandra/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="text-gray-500 hover:text-green-700 transition"
                 >
@@ -286,6 +290,8 @@ export default function AboutMe() {
                 </a>
                 <a
                   href="https://github.com/Yusufnova06"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="GitHub"
                   className="text-gray-500 hover:text-green-700 transition"
                 >
