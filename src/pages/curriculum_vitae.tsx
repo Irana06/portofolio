@@ -120,10 +120,6 @@ const CVComponent: React.FC = () => {
     ]
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto bg-white shadow-xl">
@@ -159,9 +155,9 @@ const CVComponent: React.FC = () => {
               href={cvData.linkedin} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
+              className="hover:opacity-80 transition-opacity text-white"
             >
-              🔗 LinkedIn
+              🔗 {cvData.linkedin}
             </a>
           </div>
 
@@ -333,16 +329,6 @@ const CVComponent: React.FC = () => {
               ))}
             </div>
           </section>
-
-          {/* Print Button */}
-          <div className="mt-8 text-center print:hidden">
-            <button
-              onClick={handlePrint}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-md"
-            >
-              Print / Save as PDF
-            </button>
-          </div>
         </div>
       </div>
     </div>
