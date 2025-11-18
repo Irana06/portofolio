@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Yusuf Novandra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            object-fit: cover;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            color: #667eea;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .header .title {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+
+        .summary-text {
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #f8f9ff;
+            padding: 12px 18px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .skill-value {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .experience-item, .education-item, .project-item, .cert-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 2px solid #e0e0e0;
+        }
+
+        .experience-header, .education-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .job-title, .degree-title, .project-title {
+            font-weight: 600;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .company, .school {
+            color: #667eea;
+            font-size: 16px;
+            margin-top: 3px;
+        }
+
+        .date {
+            color: #888;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .responsibilities li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .responsibilities li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .cert-org {
+            color: #667eea;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .cert-date {
+            color: #888;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        .languages {
+            display: flex;
+            gap: 30px;
+        }
+
+        .lang-item {
+            flex: 1;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .lang-level {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .portfolio-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .portfolio-link a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .portfolio-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .experience-header, .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-photo">
+                <!-- Ganti URL_FOTO_KAMU dengan link foto profil kamu -->
+                <img src="fotoku.jpg" alt="Yusuf Novandra" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="photo-placeholder" style="display: none;">YN</div>
+            </div>
+            <h1>YUSUF NOVANDRA</h1>
+            <div class="title">Junior Full-Stack Web Developer</div>
+            <div class="contact-info">
+                <span>📧 kirainova11@gmail.com</span>
+                <span>📱 +62 857-2584-1667</span>
+                <span>📍 Sleman, Yogyakarta</span>
+                <a href="https://www.linkedin.com/in/yusuf-novandra-74705731a" target="_blank">🔗 https://www.linkedin.com/in/yusuf-novandra-74705731a</a>
+            </div>
+            <div class="portfolio-link">
+                <a href="https://yushika.vercel.app" target="_blank">🌐 View My Portfolio: https://yushika.vercel.app</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Summary</h2>
+                <p class="summary-text">
+                    Enthusiastic and detail-oriented junior web developer with over 1 year of hands-on experience in building full-stack applications using Laravel and React (Inertia.js). Throughout my journey, I've worked extensively with the Laravel-React stack, developing real-world applications and honing my skills in both backend and frontend development. Completed a 6-month internship at PT Javan Cipta Solusi, where I contributed to internal and external web application development and gained practical experience with modern development workflows, including RESTful API design, database optimization, and collaborative development using Git and Agile methodologies. Passionate about backend development, clean code, and continuous learning in the ever-evolving tech landscape.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-label">Backend</div>
+                        <div class="skill-value">PHP (Laravel Framework)</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">Frontend</div>
+                        <div class="skill-value">React.js, Inertia.js, TailwindCSS</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">Database</div>
+                        <div class="skill-value">PostgreSQL (Query Optimization)</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">Tools & Methods</div>
+                        <div class="skill-value">Git, GitHub, GitLab, VS Code, Agile</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">PHP & React Programmer Intern</div>
+                            <div class="company">PT Javan Cipta Solusi - Yogyakarta</div>
+                        </div>
+                        <div class="date">July 2024 - January 2025</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Assisted in developing internal and external web applications using Laravel and React with TypeScript</li>
+                        <li>Implemented CRUD modules and optimized backend database queries for improved performance</li>
+                        <li>Collaborated with senior developers using Git version control and Agile methodologies</li>
+                        <li>Gained practical experience in RESTful API development and project deployment workflows</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="degree-title">Bachelor of Information Systems (Ongoing)</div>
+                            <div class="school">Universitas Terbuka</div>
+                        </div>
+                        <div class="date">2025 - Present</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="degree-title">Vocational High School - Software Engineering</div>
+                            <div class="school">SMK Muhammadiyah Pakem</div>
+                        </div>
+                        <div class="date">2022 - 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Featured Project</h2>
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="project-title">Badmintoon Portal</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Built a comprehensive CRUD system for managing participants, competition categories, and transactions</li>
+                        <li>Implemented user authentication and role-based access control management</li>
+                        <li>Designed and optimized relational database structure for efficient data handling</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">Inertia.js</span>
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">TailwindCSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Certifications & Training</h2>
+                <div class="cert-item">
+                    <div class="cert-name">Mini BootCamp - Optimalisasi Task Dengan Alurkerja Untuk Front End</div>
+                    <div class="cert-org">Geek Academy</div>
+                    <div class="cert-date">November 2024</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-name">Meningkatkan Kemampuan Dasar Pemrograman Web</div>
+                    <div class="cert-org">Computer Engineering Student Association - Yogyakarta University of Technology</div>
+                    <div class="cert-date">May 2024</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-name">Let's Be A Great Master of Ceremony</div>
+                    <div class="cert-org">Prodamat-MPAI UAD</div>
+                    <div class="cert-date">November 2023</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="languages">
+                    <div class="lang-item">
+                        <div class="lang-name">Indonesian</div>
+                        <div class="lang-level">Native</div>
+                    </div>
+                    <div class="lang-item">
+                        <div class="lang-name">English</div>
+                        <div class="lang-level">Basic to Intermediate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add print button functionality
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
