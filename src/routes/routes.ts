@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
     Component: App,
   },
   {
-    path: "/cv",
+    path: "cv",
     Component: CVComponent,
   },
 ]);
