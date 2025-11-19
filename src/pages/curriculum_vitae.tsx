@@ -53,7 +53,7 @@ const CVComponent: React.FC = () => {
     location: "Sleman, Yogyakarta",
     linkedin: "https://www.linkedin.com/in/yusuf-novandra-74705731a",
     portfolio: "https://yushika.vercel.app",
-    photoUrl: fotoku, // Sesuaikan dengan path foto kamu
+    photoUrl: fotoku,
     summary: "Enthusiastic and detail-oriented junior web developer with over 1 year of hands-on experience in building full-stack applications using Laravel and React (Inertia.js). Throughout my journey, I've worked extensively with the Laravel-React stack, developing real-world applications and honing my skills in both backend and frontend development. Completed a 6-month internship at PT Javan Cipta Solusi, where I contributed to internal and external web application development and gained practical experience with modern development workflows, including RESTful API design, database optimization, and collaborative development using Git and Agile methodologies. Passionate about backend development, clean code, and continuous learning in the ever-evolving tech landscape.",
     skills: {
       backend: "PHP (Laravel Framework)",
@@ -186,7 +186,7 @@ const CVComponent: React.FC = () => {
           </section>
 
           {/* Technical Skills */}
-          <section className="mb-9">
+          <section className="mb-9 print:mt-10 print:break-before-page">
             <h2 className="text-2xl font-semibold text-indigo-600 mb-4 pb-2 border-b-4 border-indigo-600">
               Technical Skills
             </h2>
@@ -238,7 +238,7 @@ const CVComponent: React.FC = () => {
           </section>
 
           {/* Education */}
-          <section className="mb-9">
+          <section className="mb-9 print:mt-10 print:break-before-page">
             <h2 className="text-2xl font-semibold text-indigo-600 mb-4 pb-2 border-b-4 border-indigo-600">
               Education
             </h2>
@@ -314,7 +314,7 @@ const CVComponent: React.FC = () => {
           </section>
 
           {/* Languages */}
-          <section className="mb-9">
+          <section className="mb-9 print:mt-10 print:break-before-page">
             <h2 className="text-2xl font-semibold text-indigo-600 mb-4 pb-2 border-b-4 border-indigo-600">
               Languages
             </h2>
